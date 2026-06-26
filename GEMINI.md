@@ -13,6 +13,12 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-06-26 10:35 - n8n Automatizáció és Webhook Integráció
+- **n8n Integráció:** Helyi n8n példányon (`http://localhost:5678`) keresztül automatikusan generálva és beállítva a Webhook workflow az n8n API-n keresztül.
+- **Workflow felépítése:** Tartalmaz egy Webhook trigger node-ot (path: `nemethy-roland-quote`, metódus: `POST`, respond mode: `lastNode`) és egy összekötött Send Email node-ot.
+- **Környezeti változók:** A `.env.local` fájlban a webhook URL sikeresen átirányítva a helyi n8n éles webhook végpontjára: `http://localhost:5678/webhook/nemethy-roland-quote`.
+- **Git:** Nincsenek kódbeli változtatások, a naplófájlok frissítve.
+
 ### 2026-06-26 10:28 - GYIK, Lábléc és Lebegő hívásgomb (Landing Page teljes)
 - **Új Komponensek:**
   - `Faq.tsx`: Gyakran ismételt kérdések szekció modern, reszponzív harmonika (accordion) elrendezéssel és letisztult interakciókkal.
@@ -34,7 +40,7 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 ### 2026-06-26 10:16 - Járműpark és Ajánlatkérő Űrlap UI
 - **Komponensek:**
   - `VehicleFleet.tsx`: Mercedes Vito és 4,2m ponyvás utánfutó kombinációjának bemutatása modern kétoszlopos rácsszerkezetben, előnyök felsorolásával és kép placeholderrel.
-  - `QuoteForm.tsx`: Professzionális árajánlatkérő űrlap, reszponzív beviteli mezőkkel (Felvétel, Lerakás, Áru leírása, Dátum, Kapcsolattartó, Email, Telefon) és hangsúlyos cselekvésre ösztönző gombbal.
+  - `QuoteForm.tsx`: Professzionális árajántatkérő űrlap, reszponzív beviteli mezőkkel (Felvétel, Lerakás, Áru leírása, Dátum, Kapcsolattartó, Email, Telefon) és hangsúlyos cselekvésre ösztönző gombbal.
 - **Főoldal:** `src/app/page.tsx` frissítve a járműpark és az űrlap komponensek behúzásával.
 - **Hibaelhárítás:** A `next/font/google` importálás eltávolítva a `layout.tsx`-ből a build alatti Google Fonts hálózati elérések hibájának kiküszöbölésére. Az oldal a rendszer betűtípusait használja (`font-sans`), és a B2B fókuszú SEO metadata és a magyar nyelv beállítása elvégezve.
 - **Git:** Változtatások commitolva és pusholva a `main` ágra.

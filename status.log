@@ -12,3 +12,6 @@ Bejegyzés: Ajánlatkérő űrlap API és n8n webhook logika implementálva, rep
 
 Dátum: 2026-06-26 10:28
 Bejegyzés: GYIK, Lábléc és Lebegő hívásgomb lefejlesztve, a landing page struktúrája teljes.
+
+Dátum: 2026-06-26 10:35
+Bejegyzés: n8n workflow automatikusan létrehozva és aktiválva API-n keresztül, webhook URL beállítva a .env.local fájlban.
