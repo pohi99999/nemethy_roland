@@ -13,6 +13,17 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-06-26 10:28 - GYIK, Lábléc és Lebegő hívásgomb (Landing Page teljes)
+- **Új Komponensek:**
+  - `Faq.tsx`: Gyakran ismételt kérdések szekció modern, reszponzív harmonika (accordion) elrendezéssel és letisztult interakciókkal.
+  - `Footer.tsx`: Céges lábléc sötét stílusban, B2B bemutatkozással, közvetlen kapcsolatokkal és pontos cégadatokkal.
+  - `FloatingCallButton.tsx`: Lebegő mobil hívásgomb pulzáló háttéreffektussal a mobil konverzió ösztönzésére.
+- **Integrációk:**
+  - A főoldal ([page.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/app/page.tsx)) kiegészítve a GYIK szekcióval.
+  - A gyökér layout ([layout.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/app/layout.tsx)) kiegészítve a lábléccel és a mobil lebegő hívásgombbal.
+- **Git:** Változtatások commitolva és pusholva a `main` ágra.
+- **Naplózás:** `status.log` frissítve és feltöltve Google Drive-ra.
+
 ### 2026-06-26 10:20 - Ajánlatkérő Űrlap API és n8n Webhook összekötés
 - **API Végpont:** `src/app/api/quote/route.ts` létrehozva a POST kérések kezelésére és továbbítására az n8n Webhook felé.
 - **Környezeti változók:** `.env.local` fájl létrehozva helyben a webhook URL tárolására (verziókövetésből kizárva).
