@@ -13,6 +13,15 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-06-26 10:16 - Járműpark és Ajánlatkérő Űrlap UI
+- **Komponensek:**
+  - `VehicleFleet.tsx`: Mercedes Vito és 4,2m ponyvás utánfutó kombinációjának bemutatása modern kétoszlopos rácsszerkezetben, előnyök felsorolásával és kép placeholderrel.
+  - `QuoteForm.tsx`: Professzionális árajánlatkérő űrlap, reszponzív beviteli mezőkkel (Felvétel, Lerakás, Áru leírása, Dátum, Kapcsolattartó, Email, Telefon) és hangsúlyos cselekvésre ösztönző gombbal.
+- **Főoldal:** `src/app/page.tsx` frissítve a járműpark és az űrlap komponensek behúzásával.
+- **Hibaelhárítás:** A `next/font/google` importálás eltávolítva a `layout.tsx`-ből a build alatti Google Fonts hálózati elérések hibájának kiküszöbölésére. Az oldal a rendszer betűtípusait használja (`font-sans`), és a B2B fókuszú SEO metadata és a magyar nyelv beállítása elvégezve.
+- **Git:** Változtatások commitolva és pusholva a `main` ágra.
+- **Naplózás:** `status.log` frissítve és feltöltve Google Drive-ra.
+
 ### 2026-06-26 10:07 - Hero és TrustFeatures szekciók (B2B fókusz)
 - **Komponensek:**
   - `Hero.tsx`: Prémium sötét háttér gradienssel, modern Mercedes-Vito eleganciát idéző stílus, kiemelt ajánlatkérő gombbal.
