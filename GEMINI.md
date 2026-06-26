@@ -13,6 +13,13 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-06-26 10:20 - Ajánlatkérő Űrlap API és n8n Webhook összekötés
+- **API Végpont:** `src/app/api/quote/route.ts` létrehozva a POST kérések kezelésére és továbbítására az n8n Webhook felé.
+- **Környezeti változók:** `.env.local` fájl létrehozva helyben a webhook URL tárolására (verziókövetésből kizárva).
+- **Űrlap működés:** `QuoteForm.tsx` átalakítva, betöltési állapotok (`isSubmitting`), siker és hiba visszajelzések kezelésével, valamint az adatok aszinkron továbbításával az API végpontra.
+- **Git:** Változtatások commitolva és pusholva a `main` ágra.
+- **Naplózás:** `status.log` frissítve és feltöltve Google Drive-ra.
+
 ### 2026-06-26 10:16 - Járműpark és Ajánlatkérő Űrlap UI
 - **Komponensek:**
   - `VehicleFleet.tsx`: Mercedes Vito és 4,2m ponyvás utánfutó kombinációjának bemutatása modern kétoszlopos rácsszerkezetben, előnyök felsorolásával és kép placeholderrel.
