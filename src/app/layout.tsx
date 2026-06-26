@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import FloatingCallButton from "@/components/FloatingCallButton";
 
 export const metadata: Metadata = {
   title: "Némethy Roland - Expressz árufuvarozás és logisztika",
@@ -13,8 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <Footer />
+        <FloatingCallButton />
+      </body>
     </html>
   );
 }
+
 
