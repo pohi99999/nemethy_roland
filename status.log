@@ -15,3 +15,6 @@ Bejegyzés: GYIK, Lábléc és Lebegő hívásgomb lefejlesztve, a landing page 
 
 Dátum: 2026-06-26 10:35
 Bejegyzés: n8n workflow automatikusan létrehozva és aktiválva API-n keresztül, webhook URL beállítva a .env.local fájlban.
+
+Dátum: 2026-06-29 11:28
+Bejegyzés: CI/CD pipeline aktív: A GitHub main ága szinkronizálva a Vercel produkciós környezettel. Minden jövőbeli push automatikusan élesedik.
