@@ -5,19 +5,25 @@ import { motion } from 'framer-motion';
 
 export default function PremiumBanner() {
   return (
-    <section className="relative w-full py-24 md:py-32 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white border-y border-slate-800">
-      {/* Finom sugárirányú háttérfények és pont-hálózat (parallax imitáció) */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
+    <section 
+      className="relative w-full py-24 md:py-32 overflow-hidden bg-cover bg-center bg-fixed text-white border-y border-slate-800"
+      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80')" }}
+    >
+      {/* Sötét overlay a jó olvashatóságért */}
+      <div className="absolute inset-0 bg-slate-950/85 z-0" />
+      
+      {/* Finom sugárirányú háttérfények és pont-hálózat */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-10" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
         backgroundSize: '30px 30px',
         backgroundPosition: 'center'
       }} />
       
       {/* Izzások */}
-      <div className="absolute -top-12 left-1/3 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-12 right-1/3 w-80 h-80 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute -top-12 left-1/3 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
+      <div className="absolute -bottom-12 right-1/3 w-80 h-80 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

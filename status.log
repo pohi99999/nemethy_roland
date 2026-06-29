@@ -21,3 +21,6 @@ Bejegyzés: CI/CD pipeline aktív: A GitHub main ága szinkronizálva a Vercel p
 
 Dátum: 2026-06-29 11:37
 Bejegyzés: Prémium UI elemek és dinamikus blokkok élesítve (dinamikus statisztikák, ügyfélvélemények és választóvonal banner).
+
+Dátum: 2026-06-29 11:41
+Bejegyzés: Prémium stock fotók integrálva és élesítve a Hero, Banner és Fleet szekciókban, next.config.ts remotePatterns beállítva.

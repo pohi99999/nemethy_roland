@@ -1,5 +1,6 @@
 import React from 'react';
-import { Check, Camera, Compass } from 'lucide-react';
+import Image from 'next/image';
+import { Check, Compass } from 'lucide-react';
 
 export default function VehicleFleet() {
   const advantages = [
@@ -40,24 +41,20 @@ export default function VehicleFleet() {
             </ul>
           </div>
 
-          {/* Jobb oldal: Kép placeholder */}
-          <div className="relative group">
+          {/* Jobb oldal: Kép */}
+          <div className="relative group aspect-[4/3] w-full">
             {/* Díszítő háttér elemek */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl filter blur-lg opacity-10 group-hover:opacity-15 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-2xl filter blur-lg opacity-10 group-hover:opacity-15 transition-opacity duration-300 z-0" />
             
-            {/* Fő placeholder doboz */}
-            <div className="relative aspect-[4/3] bg-slate-200/60 border border-slate-300/40 rounded-2xl flex flex-col items-center justify-center overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-              {/* Finom animált grid */}
-              <div className="absolute inset-0 opacity-[0.05]" style={{
-                backgroundImage: 'radial-gradient(circle at 1px 1px, black 1px, transparent 0)',
-                backgroundSize: '20px 20px'
-              }} />
-              
-              <div className="w-16 h-16 rounded-full bg-slate-300/60 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-inner">
-                <Camera className="w-8 h-8 text-slate-500" />
-              </div>
-              <span className="text-slate-500 font-semibold tracking-wider uppercase text-sm">Kép hamarosan</span>
-              <span className="text-slate-400 text-xs mt-1">Mercedes Vito szerelvény bemutató</span>
+            {/* Fő kép doboz */}
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 z-10 border border-slate-200/50">
+              <Image 
+                src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80"
+                alt="B2B Árufuvarozás és Rakodás"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
           </div>
         </div>

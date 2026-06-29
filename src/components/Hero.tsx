@@ -1,20 +1,28 @@
 import React from 'react';
+import Image from 'next/image';
 import { ArrowRight, Truck } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white py-24 md:py-32 flex items-center min-h-[70vh]">
-      {/* Háttér izzás effektek */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
-      
-      {/* Finom absztrakt vonalhálózat dekoráció a háttérben */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
-        backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-        backgroundSize: '40px 40px'
-      }} />
+    <section className="relative overflow-hidden text-white py-24 md:py-32 flex items-center min-h-[70vh]">
+      {/* Háttér kép Next.js Image-dzsel */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1920&q=80"
+          alt="Prémium B2B furgon és logisztika háttér"
+          fill
+          priority
+          className="object-cover"
+        />
+        {/* Sötét overlay a jó olvashatóságért */}
+        <div className="absolute inset-0 bg-black/75 z-10" />
+      </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Háttér izzás effektek a kép fölött és a tartalom mögött */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
+
+      <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/50 text-blue-400 text-sm font-medium mb-8 animate-fade-in">
