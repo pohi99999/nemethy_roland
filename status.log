@@ -18,3 +18,6 @@ Bejegyzés: n8n workflow automatikusan létrehozva és aktiválva API-n kereszt�
 
 Dátum: 2026-06-29 11:28
 Bejegyzés: CI/CD pipeline aktív: A GitHub main ága szinkronizálva a Vercel produkciós környezettel. Minden jövőbeli push automatikusan élesedik.
+
+Dátum: 2026-06-29 11:37
+Bejegyzés: Prémium UI elemek és dinamikus blokkok élesítve (dinamikus statisztikák, ügyfélvélemények és választóvonal banner).
