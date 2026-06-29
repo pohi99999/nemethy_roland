@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 
@@ -32,7 +33,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans pt-20">
+        <Header />
         {children}
         <Footer />
         <FloatingCallButton />
