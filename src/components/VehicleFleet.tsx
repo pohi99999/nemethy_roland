@@ -49,11 +49,11 @@ export default function VehicleFleet() {
             {/* Fő kép doboz */}
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 z-10 border border-slate-200/50">
               <Image 
-                src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80"
-                alt="B2B Árufuvarozás és Rakodás"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                src="/1.jpg"
+                alt="Mercedes Vito és ponyvás utánfutó"
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           </div>
