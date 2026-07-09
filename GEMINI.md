@@ -13,6 +13,25 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-09 12:12 - Technikai Audit Javítások, Akadálymentesítés és Prémium Vizualitás
+- **Akadálymentesítés és WCAG AA:**
+  - Frissítettük a lábléc és a partner szekció szöveg- és háttérszíneit a megfelelő kontraszt eléréséhez (WCAG AA 4.5:1).
+  - A [QuoteForm.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/QuoteForm.tsx) inputjaihoz egyértelmű, összekötött `htmlFor` / `id` alapú `<label>`-öket rendeltünk.
+  - Az összes ikon-alapú gombhoz / linkhez (fejléc, lebegő hívásgomb) beállítottuk az `aria-label` attribútumot.
+  - A [Faq.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/Faq.tsx) komponens harmonikájához beállítottuk az `aria-expanded` és `aria-controls` akadálymentesítési értékeket.
+- **Szemantikai Hierarchia (SEO):**
+  - Ellenőriztük és javítottuk a címsorok (H1 -> H2 -> H3) logikai sorrendjét.
+  - A [Stats.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/Stats.tsx) komponens kapott egy láthatatlan, de keresőbarát `h2`-t a helyes struktúrához.
+  - Eltávolítottuk a `h4` tageket a láblécből (helyettük formázott `div` osztályokat használtunk).
+- **Prémium Vizuális Fejlesztés:**
+  - A Hero szekció szövegblokkja kapott egy elegáns `backdrop-blur-md` és glassmorphism kártya hátteret.
+  - A fő CTA gombok lágyabb árnyékot (`shadow-xl`) és elegáns `hover:scale-[1.02]` animációt kaptak.
+  - Az összes ikon stroke vastagságát finom line-art stílusra cseréltük (`strokeWidth={1.5}`).
+  - Integráltuk a framer-motion segítségével a "Reveal on scroll" beúszó animációkat az összes szekcióhoz.
+- **Git és Élesítés:**
+  - Sikeres `npm run build` teszt után a változtatásokat feltöltöttük és élesítettük.
+  - Naplózás: `status.log` és `GEMINI.md` frissítve.
+
 ### 2026-06-29 12:17 - Prémium Sticky Fejléc és SVG Logó
 - **Új Komponens:**
   - `Header.tsx`: Fixen a lap tetején rögzített fejléc (`fixed z-50 bg-slate-950/80 backdrop-blur-md`), kék/szürke dizájnú, egyedi SVG logisztikai nyilak logóval, valamint közvetlen hívási lehetőséggel a fejléc jobb oldalán.
