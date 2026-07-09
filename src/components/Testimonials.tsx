@@ -70,8 +70,7 @@ export default function Testimonials() {
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between"
             >
-              {/* Idézőjel ikon */}
-              <Quote className="absolute top-6 right-8 w-10 h-10 text-slate-100 pointer-events-none" />
+              <Quote strokeWidth={1.5} className="absolute top-6 right-8 w-10 h-10 text-slate-100 pointer-events-none" />
 
               <div className="relative z-10 mb-6">
                 <p className="text-slate-700 italic leading-relaxed text-base">

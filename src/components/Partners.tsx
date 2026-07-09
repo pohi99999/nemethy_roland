@@ -8,23 +8,23 @@ export default function Partners() {
   const partners = [
     {
       name: "Logisztikai Partner Kft.",
-      icon: <Truck className="w-5 h-5" />
+      icon: <Truck className="w-5 h-5" strokeWidth={1.5} />
     },
     {
       name: "Építőanyag Kereskedés",
-      icon: <Building2 className="w-5 h-5" />
+      icon: <Building2 className="w-5 h-5" strokeWidth={1.5} />
     },
     {
       name: "Raktárbázis Kft.",
-      icon: <Warehouse className="w-5 h-5" />
+      icon: <Warehouse className="w-5 h-5" strokeWidth={1.5} />
     },
     {
       name: "Gyártástechnika Nyrt.",
-      icon: <Factory className="w-5 h-5" />
+      icon: <Factory className="w-5 h-5" strokeWidth={1.5} />
     },
     {
       name: "Trans-Sped Expressz",
-      icon: <Compass className="w-5 h-5" />
+      icon: <Compass className="w-5 h-5" strokeWidth={1.5} />
     }
   ];
 
@@ -39,17 +39,18 @@ export default function Partners() {
   } as const;
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.5, ease: "easeOut" }
     }
   } as const;
 
   return (
-    <section className="bg-slate-50 border-y border-slate-100 py-10">
-      <div className="container mx-auto px-6">
+    <section className="bg-slate-950 border-y border-slate-900 py-10 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/20 pointer-events-none" />
+      <div className="container mx-auto px-6 relative z-10">
         <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-6">
           Megbízható partnereink & együttműködéseink
         </p>
@@ -58,19 +59,19 @@ export default function Partners() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 max-w-5xl mx-auto"
         >
           {partners.map((partner, index) => (
             <motion.div 
               key={index} 
               variants={itemVariants}
-              className="flex items-center gap-2 text-slate-400 hover:text-slate-600 transition-colors duration-300 cursor-default"
+              className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors duration-300 cursor-default"
             >
-              <div className="opacity-60 transition-opacity">
+              <div className="opacity-70 transition-opacity">
                 {partner.icon}
               </div>
-              <span className="font-semibold text-sm tracking-wide">{partner.name}</span>
+              <span className="font-semibold text-sm tracking-wide text-slate-300">{partner.name}</span>
             </motion.div>
           ))}
         </motion.div>

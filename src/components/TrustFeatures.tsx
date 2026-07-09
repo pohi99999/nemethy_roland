@@ -1,24 +1,45 @@
+"use client";
+
 import React from 'react';
 import { ShieldCheck, Calculator, FileText } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function TrustFeatures() {
   const features = [
     {
-      icon: <ShieldCheck className="w-8 h-8 text-blue-600" />,
+      icon: <ShieldCheck className="w-8 h-8 text-blue-600" strokeWidth={1.5} />,
       title: "Jogi és Szerződéses Biztonság",
       description: "Stabil back-office támogatás, precíz elszámolás és szerződéses garanciák."
     },
     {
-      icon: <Calculator className="w-8 h-8 text-blue-600" />,
+      icon: <Calculator className="w-8 h-8 text-blue-600" strokeWidth={1.5} />,
       title: "Kiszámítható Árképzés",
       description: "Rejtett költségek nélküli, transzparens árajánlatok és fix díjas konstrukciók."
     },
     {
-      icon: <FileText className="w-8 h-8 text-blue-600" />,
+      icon: <FileText className="w-8 h-8 text-blue-600" strokeWidth={1.5} />,
       title: "Kártérítési Felelősségvállalás",
       description: "Minden fuvarunk teljes körű árubiztosítással és felelősségvállalással történik."
     }
   ];
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  } as const;
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  } as const;
 
   return (
     <section className="bg-slate-50 py-20 md:py-28 relative overflow-hidden">
@@ -36,17 +57,26 @@ export default function TrustFeatures() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
               key={index} 
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              variants={cardVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
               {/* Ikon konténer */}
               <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
                 <span className="group-hover:text-white transition-colors duration-300">
                   {React.cloneElement(feature.icon, {
-                    className: "w-7 h-7 text-blue-600 group-hover:text-white transition-colors duration-300"
+                    className: "w-7 h-7 text-blue-600 group-hover:text-white transition-colors duration-300",
+                    strokeWidth: 1.5
                   })}
                 </span>
               </div>
@@ -60,9 +90,9 @@ export default function TrustFeatures() {
               <p className="text-slate-600 leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

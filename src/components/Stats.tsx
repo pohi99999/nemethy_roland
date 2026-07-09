@@ -8,7 +8,7 @@ import { ShieldCheck, Zap, Truck } from 'lucide-react';
 export default function Stats() {
   const stats = [
     {
-      icon: <ShieldCheck className="w-8 h-8 text-blue-500" />,
+      icon: <ShieldCheck className="w-8 h-8 text-blue-500" strokeWidth={1.5} />,
       end: 100,
       suffix: "%",
       decimals: 0,
@@ -16,7 +16,7 @@ export default function Stats() {
       description: "Teljes körű felelősségvállalás minden egyes fuvarra."
     },
     {
-      icon: <Zap className="w-8 h-8 text-blue-500" />,
+      icon: <Zap className="w-8 h-8 text-blue-500" strokeWidth={1.5} />,
       end: 24,
       suffix: "h",
       decimals: 0,
@@ -24,7 +24,7 @@ export default function Stats() {
       description: "Gyors reagálás, azonnali logisztikai megoldások."
     },
     {
-      icon: <Truck className="w-8 h-8 text-blue-500" />,
+      icon: <Truck className="w-8 h-8 text-blue-500" strokeWidth={1.5} />,
       end: 3.5,
       suffix: "t",
       decimals: 1,
@@ -57,6 +57,7 @@ export default function Stats() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
+        <h2 className="sr-only">Statisztikáink és Kiemelt Értékeink</h2>
         <motion.div 
           variants={containerVariants}
           initial="hidden"

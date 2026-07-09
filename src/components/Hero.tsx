@@ -1,10 +1,13 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, Truck } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden text-white py-24 md:py-32 flex items-center min-h-[70vh]">
+    <section className="relative overflow-hidden text-white py-24 md:py-32 flex items-center min-h-[75vh]">
       {/* Háttér kép Next.js Image-dzsel */}
       <div className="absolute inset-0 z-0">
         <Image 
@@ -15,7 +18,7 @@ export default function Hero() {
           className="object-cover"
         />
         {/* Sötét overlay a jó olvashatóságért */}
-        <div className="absolute inset-0 bg-black/75 z-10" />
+        <div className="absolute inset-0 bg-black/70 z-10" />
       </div>
 
       {/* Háttér izzás effektek a kép fölött és a tartalom mögött */}
@@ -23,10 +26,15 @@ export default function Hero() {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
 
       <div className="container mx-auto px-6 relative z-20">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto text-center bg-slate-950/45 backdrop-blur-md border border-slate-800/80 rounded-3xl p-8 md:p-14 shadow-2xl"
+        >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/50 text-blue-400 text-sm font-medium mb-8 animate-fade-in">
-            <Truck size={16} />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 backdrop-blur-sm border border-slate-800/80 text-blue-400 text-sm font-medium mb-8">
+            <Truck size={16} strokeWidth={1.5} />
             <span>Prémium B2B Árufuvarozás</span>
           </div>
 
@@ -42,19 +50,22 @@ export default function Hero() {
 
           {/* Akció gomb */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-lg shadow-xl shadow-blue-900/30 hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+            <a 
+              href="#ajanlatkeres"
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-lg shadow-xl shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2"
+            >
               <span>Gyors Ajánlatkérés</span>
-              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+              <ArrowRight size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
             
             <a 
               href="#kapcsolat" 
-              className="px-8 py-4 bg-slate-800/50 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold rounded-lg border border-slate-700/60 transition-all duration-300"
+              className="px-8 py-4 bg-slate-900/50 backdrop-blur-sm hover:bg-slate-800 text-slate-200 hover:text-white font-semibold rounded-lg border border-slate-800/80 hover:border-slate-700/80 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:shadow-slate-950/20 transition-all duration-300"
             >
               Kapcsolatfelvétel
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

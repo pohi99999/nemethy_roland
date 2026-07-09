@@ -7,7 +7,7 @@ export default function Header() {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-6xl">
         
         {/* Bal oldal: Logó és név */}
-        <a href="/" className="flex items-center gap-3 group focus:outline-none">
+        <a href="/" className="flex items-center gap-3 group focus:outline-none" aria-label="Némethy Fuvarozás - Főoldal">
           <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
               <path d="M4 18L10 12L4 6" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -24,9 +24,10 @@ export default function Header() {
         <div>
           <a 
             href="tel:+36301234567" 
-            className="flex items-center gap-2.5 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800/80 hover:bg-slate-800 hover:border-slate-700/80 text-sm font-semibold tracking-wide text-white transition-all duration-300"
+            className="flex items-center gap-2.5 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800/80 hover:bg-slate-800 hover:border-slate-700/80 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-[1.02] shadow-xl"
+            aria-label="Telefonhívás indítása: +36 30 123 4567"
           >
-            <Phone size={15} className="text-blue-500" />
+            <Phone size={15} strokeWidth={1.5} className="text-blue-500" />
             <span className="hidden sm:inline">+36 30 123 4567</span>
             <span className="sm:hidden">Hívás</span>
           </a>

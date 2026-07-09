@@ -1,6 +1,9 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import { Check, Compass } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function VehicleFleet() {
   const advantages = [
@@ -13,11 +16,17 @@ export default function VehicleFleet() {
   return (
     <section className="bg-slate-50 py-20 md:py-28 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+        >
           {/* Bal oldal: Szöveges tartalom */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-6">
-              <Compass size={16} />
+              <Compass size={16} strokeWidth={1.5} />
               <span>Modern Szállítókapacitás</span>
             </div>
             
@@ -33,7 +42,7 @@ export default function VehicleFleet() {
               {advantages.map((advantage, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
+                    <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={1.5} />
                   </div>
                   <span className="text-slate-700 font-medium">{advantage}</span>
                 </li>
@@ -57,7 +66,7 @@ export default function VehicleFleet() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

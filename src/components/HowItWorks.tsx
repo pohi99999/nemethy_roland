@@ -7,22 +7,22 @@ import { FileText, ClipboardCheck, Box, CheckCircle } from 'lucide-react';
 export default function HowItWorks() {
   const steps = [
     {
-      icon: <FileText className="w-6 h-6 text-blue-600" />,
+      icon: <FileText className="w-6 h-6 text-blue-600" strokeWidth={1.5} />,
       title: "1. Gyors Ajánlatkérés",
       description: "Töltse ki egyszerű online űrlapunkat percek alatt, megadva a főbb fuvaradatokat."
     },
     {
-      icon: <ClipboardCheck className="w-6 h-6 text-blue-600" />,
+      icon: <ClipboardCheck className="w-6 h-6 text-blue-600" strokeWidth={1.5} />,
       title: "2. Egyeztetés és Szerződés",
       description: "Személyre szabott, transzparens árajánlatot adunk, majd rögzítjük a szerződéses feltételeket."
     },
     {
-      icon: <Box className="w-6 h-6 text-blue-600" />,
+      icon: <Box className="w-6 h-6 text-blue-600" strokeWidth={1.5} />,
       title: "3. Biztonságos Árufelvétel",
       description: "Pontosan a megbeszélt időben megjelenünk a felrakóhelyen, és szakszerűen rögzítjük a rakományt."
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
+      icon: <CheckCircle className="w-6 h-6 text-blue-600" strokeWidth={1.5} />,
       title: "4. Pontos Teljesítés",
       description: "Az árut biztonságban, a határidőket szigorúan betartva szállítjuk le a célállomásra."
     }
@@ -82,7 +82,8 @@ export default function HowItWorks() {
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 border-2 border-blue-100 bg-blue-50 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
                 <div className="group-hover:scale-110 group-hover:text-white transition-all duration-300">
                   {React.cloneElement(step.icon, {
-                    className: "w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300"
+                    className: "w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300",
+                    strokeWidth: 1.5
                   })}
                 </div>
               </div>
