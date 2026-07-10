@@ -13,6 +13,20 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-10 10:35 - Lebegő Zenelejátszó Kialakítása és Journey Dal Integrálása
+- **AudioPlayer Leválasztása és Külön Komponens (AudioPlayer.tsx):**
+  - Leválasztottam az audió lejátszót a [Footer.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/Footer.tsx) fájlról, és egy önálló [AudioPlayer.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/AudioPlayer.tsx) komponenst hoztam létre.
+  - Visszaállítottam a láblécet tiszta Server Component-té.
+- **Lebegő Megjelenés és Reszponzív Design:**
+  - A zenelejátszó fixed pozícionálást kapott (`fixed bottom-6 left-6 z-50`), így asztali és mobil nézetben is követi a görgetést. Nem akad össze a jobb oldali mobil lebegő hívásgombbal.
+  - Sötét, üveghatású (backdrop-blur-md, bg-slate-950/80) kapszula stílust kapott.
+- **Journey Forrás URL:**
+  - Az `<audio>` tag forrása a kért közvetlen Journey dal forrására frissült: `https://youtu.be/nrXVYGZewd4?si=WE0nmzVcVvO5IMoW`. Autoplay továbbra is kikapcsolva.
+- **Globális Integráció (layout.tsx):**
+  - Az [AudioPlayer.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/AudioPlayer.tsx)-et beimportáltam és elhelyeztem a gyökér [layout.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/app/layout.tsx)-ben a `<body>` részen belül, így az egész oldalon folyamatosan kíséri a látogatót.
+- **Git és Élesítés:**
+  - `npm run build` sikeres lefutása után pusholtam a repóba.
+
 ### 2026-07-10 10:23 - Megrendelői Valós Adatok, Partnerlista és Egyedi Audió Integrálása
 - **Flotta Frissítése (VehicleFleet.tsx):**
   - Mercedes Vito és utánfutó lecserélve a Mercedes-Benz Sprinter (Ponyvás), Fiat Ducato Maxi (Zárt furgon) és a rugalmas utánfutós áruszállítás leírásaira.

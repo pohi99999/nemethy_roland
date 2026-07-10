@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export const metadata: Metadata = {
   title: "Némethy Roland E.V. | Prémium B2B Árufuvarozás és Logisztika",
@@ -38,6 +39,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <FloatingCallButton />
+        <AudioPlayer />
       </body>
     </html>
   );
