@@ -13,6 +13,18 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-10 10:43 - Zenelejátszó Hanghiba Javítás és Chat Backend Előkészítés
+- **Hanghiba Elhárítása az AudioPlayer-ben (AudioPlayer.tsx):**
+  - Átalakítottam az [AudioPlayer.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/AudioPlayer.tsx) komponenst, hogy natív `<audio>` tag helyett a háttérben egy láthatatlan YouTube IFrame Player API-t töltsön be.
+  - A videó el van rejtve egy `w-0 h-0 opacity-0 pointer-events-none` konténerben, de a hangvezérlés a lebegő Play/Pause gombunkkal és a Journey számmal tökéletesen működik.
+- **Környezeti Változó Hozzáadása (.env.local):**
+  - Hozzáadtam a `NEXT_PUBLIC_N8N_CHAT_WEBHOOK_URL="https://n8n.placeholder.url/webhook/chat"` kulcsot a helyi környezeti beállításokhoz.
+- **Chat Webhook Integráció (ChatAssistant.tsx):**
+  - Módosítottam a [ChatAssistant.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/ChatAssistant.tsx) üzenetküldő logikáját: az üzeneteket aszinkron fetch-csel továbbítja a megadott webhook URL-re.
+  - Sikertelen kérés vagy placeholder URL esetén a rendszer automatikusan és zökkenőmentesen a szimulált AI válaszra esik vissza (fallback).
+- **Git és Élesítés:**
+  - `npm run build` sikeres lefutása után pusholtam a repóba.
+
 ### 2026-07-10 10:40 - AI Chat Asszisztens Prémium Felületének Kialakítása
 - **ChatAssistant Komponens Létrehozása (ChatAssistant.tsx):**
   - Elkészítettem a [ChatAssistant.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/ChatAssistant.tsx) fájlt, mely megvalósítja a lebegő asszisztens felületét.

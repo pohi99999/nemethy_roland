@@ -32,13 +32,14 @@ export default function ChatAssistant() {
     scrollToBottom();
   }, [messages, isOpen]);
 
-  const handleSend = (e: React.FormEvent) => {
+  const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
 
+    const messageText = inputValue;
     const userMsg: Message = {
       id: Date.now().toString(),
-      text: inputValue,
+      text: messageText,
       sender: 'user',
       timestamp: new Date()
     };
@@ -46,16 +47,48 @@ export default function ChatAssistant() {
     setMessages(prev => [...prev, userMsg]);
     setInputValue('');
 
-    // Simulated typing state & response for this UI phase
-    setTimeout(() => {
-      const botMsg: Message = {
-        id: (Date.now() + 1).toString(),
-        text: "Köszönöm a kérdését! Az AI asszisztens válaszadási modulja jelenleg fejlesztés alatt áll. Kérjük, sürgős ajánlatkérés esetén használja a fejlécben található telefonszámot vagy küldjön üzenetet az ajánlatkérő űrlapon keresztül!",
-        sender: 'bot',
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, botMsg]);
-    }, 1000);
+    const webhookUrl = process.env.NEXT_PUBLIC_N8N_CHAT_WEBHOOK_URL;
+    let botResponseText = "";
+
+    try {
+      if (!webhookUrl || webhookUrl.includes("placeholder.url")) {
+        throw new Error("Webhook URL is undefined or placeholder");
+      }
+
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: messageText }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Webhook request failed");
+      }
+
+      const data = await response.json();
+      if (typeof data === 'string') {
+        botResponseText = data;
+      } else if (data && typeof data === 'object') {
+        botResponseText = data.output || data.text || data.message || (Array.isArray(data) && data[0]?.output) || JSON.stringify(data);
+      } else {
+        throw new Error("Invalid response format");
+      }
+    } catch (err) {
+      console.log("n8n connection failed, using fallback simulated response:", err);
+      // Wait 1 second to simulate thinking/typing
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      botResponseText = "Köszönöm a kérdését! Az AI asszisztens válaszadási modulja jelenleg fejlesztés alatt áll. Kérjük, sürgős ajánlatkérés esetén használja a fejlécben található telefonszámot vagy küldjön üzenetet az ajánlatkérő űrlapon keresztül!";
+    }
+
+    const botMsg: Message = {
+      id: (Date.now() + 1).toString(),
+      text: botResponseText,
+      sender: 'bot',
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, botMsg]);
   };
 
   return (
