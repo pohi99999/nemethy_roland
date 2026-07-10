@@ -13,6 +13,19 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-10 10:40 - AI Chat Asszisztens Prémium Felületének Kialakítása
+- **ChatAssistant Komponens Létrehozása (ChatAssistant.tsx):**
+  - Elkészítettem a [ChatAssistant.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/ChatAssistant.tsx) fájlt, mely megvalósítja a lebegő asszisztens felületét.
+  - A gomb a jobb alsó sarokban, a FloatingCallButton felett helyezkedik el (`fixed bottom-24 right-6 z-50`), megakadályozva a takarást mobilnézetben is.
+  - Sötét, üveghatású, reszponzív chat ablakot (`h-[450px]`, `w-80` vagy `w-96`) terveztem, kék státusz LED-del, online indikátorral, és X bezáró gombbal a fejlécen.
+  - Az üzenetpanel görgethető és automatikusan az aljára ugrik üzenetküldéskor, alul pedig egy placeholderekkel ellátott beviteli mező és küldési gomb található.
+  - A beszélgetés indításakor egy üdvözlő üzenet jelenik meg a megadott szöveggel, az üzenetküldés pedig reszponzív módon, egy szimulált 1 másodperces AI gépelési késleltetés után visszajelzést ad a felhasználónak.
+  - A megnyílást és bezárulást a `framer-motion` animálja smooth átmenetekkel.
+- **Integráció a Root Layoutba (layout.tsx):**
+  - Beimportáltam és elhelyeztem a `<ChatAssistant />` komponenst a gyökér [layout.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/app/layout.tsx) fájlban, így globálisan elérhetővé téve a teljes oldalon.
+- **Git és Élesítés:**
+  - `npm run build` sikeres lefutása után pusholtam a repóba.
+
 ### 2026-07-10 10:35 - Lebegő Zenelejátszó Kialakítása és Journey Dal Integrálása
 - **AudioPlayer Leválasztása és Külön Komponens (AudioPlayer.tsx):**
   - Leválasztottam az audió lejátszót a [Footer.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/Footer.tsx) fájlról, és egy önálló [AudioPlayer.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/AudioPlayer.tsx) komponenst hoztam létre.
