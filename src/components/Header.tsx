@@ -23,12 +23,12 @@ export default function Header() {
         {/* Jobb oldal: Elérhetőség/CTA */}
         <div>
           <a 
-            href="tel:+36301234567" 
+            href="tel:+36706260920" 
             className="flex items-center gap-2.5 px-4 py-2 rounded-lg bg-slate-900 border border-slate-800/80 hover:bg-slate-800 hover:border-slate-700/80 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:scale-[1.02] shadow-xl"
-            aria-label="Telefonhívás indítása: +36 30 123 4567"
+            aria-label="Telefonhívás indítása: +36 70 626 0920"
           >
             <Phone size={15} strokeWidth={1.5} className="text-blue-500" />
-            <span className="hidden sm:inline">+36 30 123 4567</span>
+            <span className="hidden sm:inline">+36 70 626 0920</span>
             <span className="sm:hidden">Hívás</span>
           </a>
         </div>

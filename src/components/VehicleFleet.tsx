@@ -6,11 +6,19 @@ import { Check, Compass } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function VehicleFleet() {
-  const advantages = [
-    "Akár 7-8 EUR raklap kapacitás",
-    "Oldalsó rakodhatóság targoncával a gyors anyagmozgatásért",
-    "Nincs HU-GO e-útdíj és tachográf kötöttség – gyorsabb és rugalmasabb szállítás",
-    "Ideális építőanyagok, raklapos áruk és terjedelmes csomagok expressz szállítására"
+  const fleetItems = [
+    {
+      title: "Mercedes-Benz Sprinter (Ponyvás)",
+      description: "22 m³ kapacitás, 4.2m × 2.1m × 2.55m (H × Sz × M) raktér."
+    },
+    {
+      title: "Fiat Ducato Maxi (Zárt furgon)",
+      description: "17 m³ kapacitás, 5 palettás teherbírás."
+    },
+    {
+      title: "Rugalmas utánfutós áruszállítás",
+      description: "5 métertől egészen 8 méterig terjedő extra szállítási lehetőségek."
+    }
   ];
 
   return (
@@ -31,23 +39,34 @@ export default function VehicleFleet() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
-              Mercedes-Benz Vito & 4,2m ponyvás utánfutó kombináció
+              Professzionális Járműpark és Eszközök
             </h2>
             
             <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-              Járműparkunk gerincét a megbízhatóságáról híres Mercedes-Benz Vito képezi, melyet egy speciális ponyvás utánfutóval egészítünk ki. Ez a párosítás tökéletes egyensúlyt teremt a nagy kapacitás és a rugalmas expressz szállítás között.
+              Flottánkat a B2B partnereink szigorú elvárásaihoz szabtuk. A modern zárt és ponyvás járműveink, valamint rugalmas szállítóeszközeink garantálják a precíz és sérülésmentes célba juttatást.
             </p>
 
-            <ul className="space-y-4">
-              {advantages.map((advantage, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={1.5} />
+            <div className="space-y-4">
+              {fleetItems.map((item, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-200/80 transition-all duration-300 flex items-start gap-4"
+                >
+                  <div className="mt-1 flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="1.5" y="3" width="21" height="18" rx="2" />
+                      <path d="M7 21v-4" />
+                      <path d="M17 21v-4" />
+                      <path d="M1.5 8h21" />
+                    </svg>
                   </div>
-                  <span className="text-slate-700 font-medium">{advantage}</span>
-                </li>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-base mb-1">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Jobb oldal: Kép */}
@@ -59,7 +78,7 @@ export default function VehicleFleet() {
             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 z-10 border border-slate-200/50">
               <Image 
                 src="/1.jpg"
-                alt="Mercedes Vito és ponyvás utánfutó"
+                alt="Némethy Roland szállító flotta"
                 width={800}
                 height={600}
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"

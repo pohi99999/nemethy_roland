@@ -1,7 +1,22 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Shield } from 'lucide-react';
+"use client";
+
+import React, { useState, useRef } from 'react';
+import { Mail, Phone, MapPin, Shield, Play, Pause } from 'lucide-react';
 
 export default function Footer() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch(err => console.log("Audio play blocked/failed:", err));
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <footer className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-900">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -23,10 +38,10 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="text-white font-bold text-lg tracking-wider uppercase">Kapcsolat</div>
             <ul className="space-y-3 text-sm">
-              <li className="font-semibold text-white">Némethy Roland E.V.</li>
+              <li className="font-semibold text-white text-base">Némethy Roland Egyéni Vállalkozó</li>
               <li className="flex items-center gap-2">
                 <Phone size={16} strokeWidth={1.5} className="text-blue-500" />
-                <a href="tel:+36301234567" className="hover:text-white transition-colors duration-200 text-slate-300" aria-label="Hívás: +36 30 123 4567">+36 30 123 4567</a>
+                <a href="tel:+36706260920" className="hover:text-white transition-colors duration-200 text-slate-300" aria-label="Hívás: +36 70 626 0920">+36 70 626 0920</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} strokeWidth={1.5} className="text-blue-500" />
@@ -41,7 +56,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin size={16} strokeWidth={1.5} className="text-blue-500 mt-0.5 flex-shrink-0" />
-                <span className="text-slate-300">Székhely: 2030 Érd, Földmunkás utca 38.</span>
+                <span className="text-slate-300">Székhely: 2030 Érd, Földmunkás u. 38.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-slate-400 font-semibold">Adószám:</span>
@@ -52,12 +67,34 @@ export default function Footer() {
 
         </div>
 
-        {/* Alsó copyright rész */}
-        <div className="pt-8 border-t border-slate-900 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Némethy Roland E.V. Minden jog fenntartva.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-slate-300 transition-colors duration-200">Adatkezelési tájékoztató</a>
-            <a href="#" className="hover:text-slate-300 transition-colors duration-200">ÁSZF</a>
+        {/* Alsó copyright rész és zenelejátszó */}
+        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-xs text-slate-400 text-center md:text-left">
+            <p>© {new Date().getFullYear()} Némethy Roland Egyéni Vállalkozó. Minden jog fenntartva.</p>
+            <div className="flex gap-4 mt-2 justify-center md:justify-start">
+              <a href="#" className="hover:text-slate-300 transition-colors duration-200">Adatkezelési tájékoztató</a>
+              <a href="#" className="hover:text-slate-300 transition-colors duration-200">ÁSZF</a>
+            </div>
+          </div>
+
+          {/* Diszkrét Zenelejátszó */}
+          <div className="flex items-center gap-3 bg-slate-900/80 border border-slate-800/60 px-4 py-2 rounded-full shadow-md text-xs">
+            <button 
+              onClick={togglePlay} 
+              className="w-6 h-6 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center transition-all duration-200 hover:scale-105 focus:outline-none"
+              aria-label={isPlaying ? "Zene megállítása" : "Zene lejátszása"}
+            >
+              {isPlaying ? <Pause size={10} fill="currentColor" /> : <Play size={10} fill="currentColor" className="ml-0.5" />}
+            </button>
+            <span className="font-semibold text-slate-300 tracking-wide">
+              The Sopranos  Don't Stop Believin'
+            </span>
+            <audio 
+              ref={audioRef}
+              src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
+              preload="none"
+              onEnded={() => setIsPlaying(false)}
+            />
           </div>
         </div>
       </div>

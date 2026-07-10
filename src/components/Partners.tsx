@@ -2,29 +2,33 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Warehouse, Truck, Factory, Compass } from 'lucide-react';
+import { Building2, Warehouse, Truck, Factory, Compass, Shield } from 'lucide-react';
 
 export default function Partners() {
   const partners = [
     {
-      name: "Logisztikai Partner Kft.",
-      icon: <Truck className="w-5 h-5" strokeWidth={1.5} />
-    },
-    {
-      name: "Építőanyag Kereskedés",
-      icon: <Building2 className="w-5 h-5" strokeWidth={1.5} />
-    },
-    {
-      name: "Raktárbázis Kft.",
-      icon: <Warehouse className="w-5 h-5" strokeWidth={1.5} />
-    },
-    {
-      name: "Gyártástechnika Nyrt.",
+      name: "Eviron System Zrt.",
       icon: <Factory className="w-5 h-5" strokeWidth={1.5} />
     },
     {
-      name: "Trans-Sped Expressz",
+      name: "Econix Zrt.",
       icon: <Compass className="w-5 h-5" strokeWidth={1.5} />
+    },
+    {
+      name: "Kgb Zrt.",
+      icon: <Building2 className="w-5 h-5" strokeWidth={1.5} />
+    },
+    {
+      name: "Mobil Art Kft.",
+      icon: <Truck className="w-5 h-5" strokeWidth={1.5} />
+    },
+    {
+      name: "Königsberg Kft.",
+      icon: <Warehouse className="w-5 h-5" strokeWidth={1.5} />
+    },
+    {
+      name: "Open Metal Building System Kft.",
+      icon: <Shield className="w-5 h-5" strokeWidth={1.5} />
     }
   ];
 

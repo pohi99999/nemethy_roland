@@ -13,6 +13,22 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-10 10:23 - Megrendelői Valós Adatok, Partnerlista és Egyedi Audió Integrálása
+- **Flotta Frissítése (VehicleFleet.tsx):**
+  - Mercedes Vito és utánfutó lecserélve a Mercedes-Benz Sprinter (Ponyvás), Fiat Ducato Maxi (Zárt furgon) és a rugalmas utánfutós áruszállítás leírásaira.
+  - A járművek kártyás, modern elrendezést kaptak a bal oldalon, a jobb oldali valós kép (1.jpg) megtartása mellett.
+- **Valós B2B Partnerek (Partners.tsx):**
+  - A korábbi placeholder partnerneveket Roland valódi partnereire cseréltük: Eviron System Zrt., Econix Zrt., Kgb Zrt., Mobil Art Kft., Königsberg Kft., Open Metal Building System Kft.
+  - Az elegáns minimalista szürkeárnyalatos görgető animáció és stílus megmaradt.
+- **Kapcsolat és Cégadatok (Footer.tsx, Header.tsx, FloatingCallButton.tsx):**
+  - Telefonszám frissítve a valós értékre (+36 70 626 0920) az összes komponensben.
+  - Cégadatok pontosítva a láblécben: Némethy Roland Egyéni Vállalkozó, 2030 Érd, Földmunkás u. 38., Adószám: 67611054-2-33.
+- **Egyedi Zenelejátszó (Footer.tsx):**
+  - Diszkrét, esztétikus zenelejátszó integrálva a lábléc aljába (Sopranos - Don't Stop Believin' / SoundHelix teszt mp3).
+  - "no autoplay" konfigurációval, Play/Pause vezérlőgombbal.
+- **Tesztelés és Élesítés:**
+  - `npm run build` sikeresen lefutott.
+
 ### 2026-07-09 12:12 - Technikai Audit Javítások, Akadálymentesítés és Prémium Vizualitás
 - **Akadálymentesítés és WCAG AA:**
   - Frissítettük a lábléc és a partner szekció szöveg- és háttérszíneit a megfelelő kontraszt eléréséhez (WCAG AA 4.5:1).
