@@ -13,6 +13,19 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-10 10:50 - AI Chat Asszisztens GitHub Models API Csatlakozás
+- **API Route Létrehozása (route.ts):**
+  - Létrehoztam az [src/app/api/chat/route.ts](file:///Z:/001_Workspace/Némethy_Roland/src/app/api/chat/route.ts) végpontot, amely a GitHub Models API-t (GPT-4o-mini) hívja meg.
+  - A végponton beégettem Roland egyedi vállalkozási adatait a System Promptba (pontos flotta paraméterek, cím, telefonszám, adószám, partnerek, kártérítési fedezet és háttéradatok) a tényalapú és professzionális válaszadás érdekében.
+- **Környezeti Változók Frissítése (.env.local):**
+  - Módosítottam a `NEXT_PUBLIC_N8N_CHAT_WEBHOOK_URL` értékét a belső `/api/chat` útvonalra.
+  - Hozzáadtam a `GITHUB_TOKEN` helyőrzőt a helyi környezeti konfigurációhoz.
+- **Kliensoldali Csatlakozás (ChatAssistant.tsx):**
+  - Frissítettem a [ChatAssistant.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/ChatAssistant.tsx) JSON válasz-kiolvasási logikáját, hogy a belső API által visszaadott `{ reply: "..." }` mezőből nyerje ki a választ.
+  - A hálózati hibákra és hiányzó tokenekre vonatkozó fallback logika változatlanul aktív.
+- **Git és Élesítés:**
+  - `npm run build` sikeres lefutása után pusholtam a repóba.
+
 ### 2026-07-10 10:43 - Zenelejátszó Hanghiba Javítás és Chat Backend Előkészítés
 - **Hanghiba Elhárítása az AudioPlayer-ben (AudioPlayer.tsx):**
   - Átalakítottam az [AudioPlayer.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/AudioPlayer.tsx) komponenst, hogy natív `<audio>` tag helyett a háttérben egy láthatatlan YouTube IFrame Player API-t töltsön be.

@@ -68,7 +68,9 @@ export default function ChatAssistant() {
       }
 
       const data = await response.json();
-      if (typeof data === 'string') {
+      if (data && data.reply) {
+        botResponseText = data.reply;
+      } else if (typeof data === 'string') {
         botResponseText = data;
       } else if (data && typeof data === 'object') {
         botResponseText = data.output || data.text || data.message || (Array.isArray(data) && data[0]?.output) || JSON.stringify(data);
