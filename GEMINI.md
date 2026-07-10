@@ -13,6 +13,15 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-10 11:00 - GitHub Models API Token Validáció és Tesztelés
+- **Élő Végpont Ellenőrzése:**
+  - Teszteltem a Vercel-en futó élő [api/chat](file:///Z:/001_Workspace/Némethy_Roland/src/app/api/chat/route.ts) végpontot egy POST kéréssel ("Milyen autóitok vannak?").
+  - Az élő API sikeres választ adott vissza a GitHub Models (GPT-4o-mini) segítségével, megerősítve a token helyes működését és az AI Asszisztens működését.
+- **Validáció:**
+  - A kapott válasz pontosan Roland vállalkozási adataira épült (Sprinter és Ducato furgonok, utánfutók adatai), igazolva a System Promptban beállított egyedi logisztikai tudásbázis helyességét.
+- **Git és Élesítés:**
+  - A tesztelés lezárása után naplóztam és commitoltam a változtatásokat a main ágon.
+
 ### 2026-07-10 10:50 - AI Chat Asszisztens GitHub Models API Csatlakozás
 - **API Route Létrehozása (route.ts):**
   - Létrehoztam az [src/app/api/chat/route.ts](file:///Z:/001_Workspace/Némethy_Roland/src/app/api/chat/route.ts) végpontot, amely a GitHub Models API-t (GPT-4o-mini) hívja meg.
