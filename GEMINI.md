@@ -13,6 +13,21 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-16 13:40 - Google Fonts, Glassmorphism és Akadálymentesítési (A11y) Javítások
+- **Tipográfia Modernizálása (layout.tsx & globals.css):**
+  - Integráltam a Google Fontokat a Next.js `next/font/google` modulján keresztül: címsorokhoz a `Montserrat`-ot, szövegtörzshöz az `Inter`-t.
+  - Beállítottam a betűtípus-változókat a body elemen, és a [globals.css](file:///Z:/001_Workspace/Némethy_Roland/src/app/globals.css) fájlban globálisan alkalmaztam a címsorokra a Montserrat, a szövegtörzsre az Inter betűtípust.
+- **Glassmorphism és Vizuális Hierarchia:**
+  - Minden kártyajellegű elemre (járműkártyák, partnerek, vélemények, GYIK, és az AI chat) elegáns glassmorphic hátteret (`bg-white/70` és `dark:bg-slate-950/40`), háttérelmosást (`backdrop-blur-md`) és vékony szegélyt (`border-slate-200/80` és `dark:border-white/10`) állítottam be.
+  - Konzisztens, prémium lekerekítést (`rounded-2xl` a kártyákhoz és `rounded-xl` a beviteli mezőkhöz, gombokhoz) vezettem be.
+- **Interakciók és CTA gombok:**
+  - A gombok enyhe hover emelkedést (`hover:-translate-y-0.5`) és lágy árnyékot (`hover:shadow-indigo-500/10`) kaptak a prémium minőségérzetért.
+- **Akadálymentesítés (A11y / WCAG):**
+  - Biztosítottam az összes inputhoz a megfelelő `<label>`-t a [QuoteForm.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/QuoteForm.tsx) fájlban, és elláttam a szükséges `aria-label` attribútummal az interaktív és ikon-alapú gombokat (pl. chat input és küldés gombok).
+  - Töröltem a szükségtelen tabindexeket, így a böngésző a természetes fókuszsorrendet követi.
+- **Ellenőrzés és Git push:**
+  - `npm run build` sikeresen lefutott, a módosításokat feltöltöttem a main ágra a Vercel automatikus deployhoz.
+
 ### 2026-07-16 13:25 - Járműpark Valós Fotók és Reszponzív Grid Integráció
 - **Képek áthelyezése:**
   - Áthelyeztem a `MERCEDES-SPRINTER.jpg` és `Fiat-Ducato.jpg` fotókat a `public/images/` mappába.
