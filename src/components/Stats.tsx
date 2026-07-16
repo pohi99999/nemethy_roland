@@ -69,10 +69,10 @@ export default function Stats() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-slate-800/40 border border-slate-800 rounded-2xl p-8 flex flex-col items-center text-center backdrop-blur-sm hover:border-slate-700/50 hover:bg-slate-800/60 transition-all duration-300 group"
+              className="bg-white/5 dark:bg-slate-950/40 border border-slate-200/80 dark:border-white/10 rounded-2xl p-8 flex flex-col items-center text-center backdrop-blur-md hover:border-blue-500/30 hover:bg-white/10 dark:hover:bg-slate-900/60 transition-all duration-300 group shadow-sm"
             >
               {/* Ikon */}
-              <div className="w-14 h-14 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-blue-500/30 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-blue-500/30 transition-all duration-300">
                 {stat.icon}
               </div>
 

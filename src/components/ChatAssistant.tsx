@@ -102,7 +102,7 @@ export default function ChatAssistant() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-16 right-0 w-80 sm:w-96 h-[450px] bg-slate-950/95 border border-slate-800 shadow-2xl backdrop-blur-md rounded-2xl flex flex-col overflow-hidden text-slate-100 max-w-[calc(100vw-2rem)] animate-in fade-in zoom-in-95 duration-200"
+            className="absolute bottom-16 right-0 w-80 sm:w-96 h-[450px] bg-slate-950/80 border border-white/10 shadow-2xl backdrop-blur-md rounded-2xl flex flex-col overflow-hidden text-slate-100 max-w-[calc(100vw-2rem)] animate-in fade-in zoom-in-95 duration-200"
           >
             {/* Fejléc */}
             <div className="bg-gradient-to-r from-blue-900/80 to-slate-900/80 px-4 py-3 border-b border-slate-800/80 flex items-center justify-between">
@@ -147,17 +147,18 @@ export default function ChatAssistant() {
             </div>
 
             {/* Alsó input mező */}
-            <form onSubmit={handleSend} className="p-3 border-t border-slate-800/80 bg-slate-950 flex gap-2">
+            <form onSubmit={handleSend} className="p-3 border-t border-slate-800/80 bg-slate-950/80 backdrop-blur-md flex gap-2">
               <input 
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Kérdezzen a fuvarozási kapacitásokról..."
-                className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                aria-label="Kérdés beírása az AI asszisztensnek"
+                className="flex-1 bg-slate-900/60 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
               />
               <button 
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-xl transition-all active:scale-95 flex items-center justify-center shadow-lg"
+                className="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-xl transition-all active:scale-95 flex items-center justify-center shadow-lg hover:-translate-y-0.5 hover:shadow-indigo-500/10"
                 aria-label="Küldés"
               >
                 <Send size={16} />

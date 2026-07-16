@@ -59,7 +59,7 @@ export default function VehicleFleet() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col group"
+              className="bg-white/70 dark:bg-slate-950/40 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-200/80 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-500/30 transition-all duration-300 flex flex-col group"
             >
               {/* Kép konténer */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">

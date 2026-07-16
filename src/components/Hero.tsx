@@ -30,10 +30,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto text-center bg-slate-950/45 backdrop-blur-md border border-slate-800/80 rounded-3xl p-8 md:p-14 shadow-2xl"
+          className="max-w-4xl mx-auto text-center bg-slate-950/40 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-14 shadow-2xl"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/60 backdrop-blur-sm border border-slate-800/80 text-blue-400 text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10 text-blue-400 text-sm font-medium mb-8">
             <Truck size={16} strokeWidth={1.5} />
             <span>Prémium B2B Árufuvarozás</span>
           </div>
@@ -52,7 +52,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a 
               href="#ajanlatkeres"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-lg shadow-xl shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2"
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] flex items-center gap-2"
             >
               <span>Gyors Ajánlatkérés</span>
               <ArrowRight size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -60,7 +60,7 @@ export default function Hero() {
             
             <a 
               href="#kapcsolat" 
-              className="px-8 py-4 bg-slate-900/50 backdrop-blur-sm hover:bg-slate-800 text-slate-200 hover:text-white font-semibold rounded-lg border border-slate-800/80 hover:border-slate-700/80 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:shadow-slate-950/20 transition-all duration-300"
+              className="px-8 py-4 bg-slate-900/50 backdrop-blur-sm hover:bg-slate-800 text-slate-200 hover:text-white font-semibold rounded-xl border border-white/10 hover:-translate-y-0.5 active:scale-[0.98] shadow-xl hover:shadow-indigo-500/10 transition-all duration-300"
             >
               Kapcsolatfelvétel
             </a>

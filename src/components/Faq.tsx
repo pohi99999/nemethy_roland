@@ -54,7 +54,7 @@ export default function Faq() {
               return (
                 <div 
                   key={index} 
-                  className="border border-slate-100 rounded-2xl bg-slate-50/50 hover:bg-slate-50 transition-all duration-300 overflow-hidden"
+                  className="border border-slate-200/80 dark:border-white/10 rounded-2xl bg-white/70 dark:bg-slate-950/40 backdrop-blur-md hover:bg-white dark:hover:bg-slate-900/60 transition-all duration-300 overflow-hidden shadow-sm"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
@@ -63,7 +63,7 @@ export default function Faq() {
                     aria-controls={`faq-answer-${index}`}
                     id={`faq-btn-${index}`}
                   >
-                    <span className="font-bold text-slate-950 text-lg md:pr-8">{faq.q}</span>
+                    <span className="font-bold text-slate-950 dark:text-white text-lg md:pr-8">{faq.q}</span>
                     <ChevronDown 
                       size={20} 
                       strokeWidth={1.5}
@@ -77,7 +77,7 @@ export default function Faq() {
                     aria-labelledby={`faq-btn-${index}`}
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
-                    <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-white">
+                    <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/80 dark:border-white/10 pt-4 bg-white/40 dark:bg-slate-950/20">
                       {faq.a}
                     </div>
                   </div>

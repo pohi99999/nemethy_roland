@@ -69,7 +69,7 @@ export default function TrustFeatures() {
               key={index} 
               variants={cardVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group"
+              className="bg-white/70 dark:bg-slate-950/40 backdrop-blur-md p-8 rounded-2xl border border-slate-200/80 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
               {/* Ikon konténer */}
               <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">

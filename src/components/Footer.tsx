@@ -13,7 +13,7 @@ export default function Footer() {
             <p className="leading-relaxed text-sm text-slate-300">
               Prémium minőségű, B2B fókuszú expressz árufuvarozás és logisztika. Megbízhatóság, jogi biztonság és pontos teljesítés Érdről országosan és nemzetközileg.
             </p>
-            <div className="inline-flex items-center gap-2 text-xs text-blue-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-full">
+            <div className="inline-flex items-center gap-2 text-xs text-blue-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-xl">
               <Shield size={12} strokeWidth={1.5} />
               <span>Garantált Árubiztosítás</span>
             </div>

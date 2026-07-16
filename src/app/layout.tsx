@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
+import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import AudioPlayer from "@/components/AudioPlayer";
 import ChatAssistant from "@/components/ChatAssistant";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Némethy Roland E.V. | Prémium B2B Árufuvarozás és Logisztika",
@@ -35,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-sans pt-20">
+      <body className={`${inter.variable} ${montserrat.variable} min-h-full flex flex-col font-sans pt-20`}>
         <Header />
         {children}
         <Footer />
