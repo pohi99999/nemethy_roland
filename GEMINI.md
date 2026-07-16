@@ -13,6 +13,17 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-16 13:25 - Járműpark Valós Fotók és Reszponzív Grid Integráció
+- **Képek áthelyezése:**
+  - Áthelyeztem a `MERCEDES-SPRINTER.jpg` és `Fiat-Ducato.jpg` fotókat a `public/images/` mappába.
+  - Átmásoltam az `1.jpg` képet a `public/images/1.jpg` alá, hogy az összes flotta kép egy mappában legyen.
+- **Kártyák és Reszponzív Grid Kialakítása:**
+  - Átalakítottam a [VehicleFleet.tsx](file:///Z:/001_Workspace/Némethy_Roland/src/components/VehicleFleet.tsx) komponenst egy modern 3-oszlopos grid elrendezéssé (`grid-cols-1 md:grid-cols-3`).
+  - Mindhárom jármű egyedi, prémium dizájnú kártyát kapott az adataival és a valós képekkel (Vito + utánfutó, Sprinter ponyvás, Fiat Ducato Maxi zárt furgon).
+  - Next.js `<Image />` komponenst használtam `fill` és `aspect-[4/3]` beállításokkal a torzulásmentes és reszponzív megjelenítéshez.
+- **Ellenőrzés és Git push:**
+  - `npm run build` sikeresen lefutott, a változtatások pusholva lettek a GitHub `main` ágra.
+
 ### 2026-07-10 11:00 - GitHub Models API Token Validáció és Tesztelés
 - **Élő Végpont Ellenőrzése:**
   - Teszteltem a Vercel-en futó élő [api/chat](file:///Z:/001_Workspace/Némethy_Roland/src/app/api/chat/route.ts) végpontot egy POST kéréssel ("Milyen autóitok vannak?").
