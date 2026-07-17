@@ -13,6 +13,13 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-17 12:16 - Járműpark Szöveges Leírások Pontosítása a Vizuális Hitelességért
+- **Szövegek pontosítása (VehicleFleet.tsx):**
+  - Módosítottam a Mercedes-Benz Vito kártyát a megrendelő visszajelzése alapján, hogy megszüntessük a vizuális ellentmondást.
+  - Frissítettem a címkét "Rugalmas szerelvény"-re, a címet "Mercedes-Benz Vito & Utánfutó"-ra, a leírást pedig a zárt furgont és az utánfutós kiegészíthetőséget kiemelő szövegre.
+- **Ellenőrzés és Git push:**
+  - `npm run build` sikeresen lefutott, a változtatások fel lettek töltve a GitHub `main` ágára a Vercel automatikus élesítéséhez.
+
 ### 2026-07-16 13:40 - Google Fonts, Glassmorphism és Akadálymentesítési (A11y) Javítások
 - **Tipográfia Modernizálása (layout.tsx & globals.css):**
   - Integráltam a Google Fontokat a Next.js `next/font/google` modulján keresztül: címsorokhoz a `Montserrat`-ot, szövegtörzshöz az `Inter`-t.

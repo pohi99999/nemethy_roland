@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 export default function VehicleFleet() {
   const fleetItems = [
     {
-      title: "Mercedes-Benz Vito + Ponyvás utánfutó",
-      description: "Rugalmas utánfutós áruszállítás, 5 métertől egészen 8 méterig terjedő extra szállítási lehetőségek.",
+      title: "Mercedes-Benz Vito & Utánfutó",
+      description: "Megbízható zárt furgon, amely igény esetén 58 méter hosszú utánfutóval is kiegészíthető, így maximálisan alkalmazkodik az egyedi szállítási feladatokhoz.",
       image: "/images/1.jpg",
-      capacity: "Rugalmas hosszúság (5-8m)"
+      capacity: "Rugalmas szerelvény"
     },
     {
       title: "Mercedes-Benz Sprinter (Ponyvás)",
