@@ -13,6 +13,17 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-17 14:52 - Technikai SEO, sitemap.xml és robots.txt integráció
+- **Technikai SEO (layout.tsx):**
+  - Bővítettem a metaadatokat a legmagasabb B2B SEO sztenderdek szerint (cím sablon, meta leírás, kulcsszavak, szerző és robotok beállításai).
+  - Ellenőriztem, hogy a `<html>` tag nyelvi attribútuma pontosan `lang="hu"` értékű.
+- **Sitemap & Robots Generálás (sitemap.ts, robots.ts):**
+  - Létrehoztam a [sitemap.ts](file:///Z:/001_Workspace/Némethy_Roland/src/app/sitemap.ts) fájlt az automatikus, érvényes XML sitemap generáláshoz.
+  - Létrehoztam a [robots.ts](file:///Z:/001_Workspace/Némethy_Roland/src/app/robots.ts) fájlt a robots.txt automatikus generálásához, megadva a szabályokat és a sitemap elérését.
+- **Ellenőrzés és Git push:**
+  - `npm run build` sikeresen lefutott, a Next.js legenerálta a `/sitemap.xml` és `/robots.txt` statikus oldalakat.
+  - A változtatások feltöltve a GitHub `main` ágára a Vercel automatikus élesítéséhez.
+
 ### 2026-07-17 12:16 - Járműpark Szöveges Leírások Pontosítása a Vizuális Hitelességért
 - **Szövegek pontosítása (VehicleFleet.tsx):**
   - Módosítottam a Mercedes-Benz Vito kártyát a megrendelő visszajelzése alapján, hogy megszüntessük a vizuális ellentmondást.

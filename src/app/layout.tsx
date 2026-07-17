@@ -22,14 +22,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Némethy Roland E.V. | Prémium B2B Árufuvarozás és Logisztika",
-  description: "Kiszámítható, expressz árufuvarozás és logisztika Érd központtal. Mercedes Vito + 4,2m ponyvás utánfutó, stabil szerződéses háttér és 100% kártérítési fedezet céges partnereknek.",
-  keywords: ["árufuvarozás", "logisztika", "B2B fuvarozás", "Érd", "furgonos szállítás", "ponyvás utánfutó", "belföldi fuvarozás", "expressz szállítás"],
+  title: {
+    default: "Némethy Roland E.V. | Prémium B2B Árufuvarozás és Logisztika",
+    template: "%s | Némethy Roland E.V."
+  },
+  description: "Megbízható furgonos árufuvarozás, logisztika és költöztetés Érd vonzáskörzetéből, országos lefedettséggel. Mercedes Sprinter és Fiat Ducato kapacitás cégeknek.",
+  keywords: ["árufuvarozás", "logisztika", "költöztetés", "belföldi fuvarozás", "Érd", "Budapest", "furgonos szállítás", "B2B fuvarozás"],
+  authors: [{ name: "Némethy Roland" }],
   openGraph: {
-    title: "Némethy Roland E.V. | Prémium B2B Árufuvarozás",
-    description: "Expressz árufuvarozás és logisztika kompromisszumok nélkül. Kiemelt kapacitás és garantált szerződéses biztonság.",
+    title: "Némethy Roland E.V. | Prémium B2B Árufuvarozás és Logisztika",
+    description: "Megbízható furgonos árufuvarozás, logisztika és költöztetés Érd vonzáskörzetéből, országos lefedettséggel. Mercedes Sprinter és Fiat Ducato kapacitás cégeknek.",
     url: "https://nemethy-roland.vercel.app/",
-    siteName: "Némethy Roland Logisztika",
+    siteName: "Némethy Roland E.V.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1200&h=630&q=80",
@@ -41,6 +45,14 @@ export const metadata: Metadata = {
     locale: "hu_HU",
     type: "website",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true
+    }
+  }
 };
 
 export default function RootLayout({
