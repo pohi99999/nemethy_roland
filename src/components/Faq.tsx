@@ -27,7 +27,7 @@ export default function Faq() {
   };
 
   return (
-    <section className="bg-white py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-transparent py-20 md:py-28 relative overflow-hidden text-white">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -36,14 +36,14 @@ export default function Faq() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 text-slate-800 text-sm font-medium mb-6">
-              <HelpCircle size={16} strokeWidth={1.5} className="text-blue-600" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-blue-400 text-sm font-semibold mb-6 shadow-md">
+              <HelpCircle size={16} strokeWidth={1.5} className="text-blue-400" />
               <span>Gyakran Ismételt Kérdések</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               Megválaszoljuk kérdéseit
             </h2>
-            <p className="text-slate-600">
+            <p className="text-slate-200 text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
               Összegyűjtöttük a legfontosabb információkat a gördülékeny együttműködés érdekében.
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function Faq() {
               return (
                 <div 
                   key={index} 
-                  className="border border-slate-200/80 dark:border-white/10 rounded-2xl bg-white/70 dark:bg-slate-950/40 backdrop-blur-md hover:bg-white dark:hover:bg-slate-900/60 transition-all duration-300 overflow-hidden shadow-sm"
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500 ease-out hover:border-white/20 rounded-2xl overflow-hidden"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
@@ -63,11 +63,11 @@ export default function Faq() {
                     aria-controls={`faq-answer-${index}`}
                     id={`faq-btn-${index}`}
                   >
-                    <span className="font-bold text-slate-950 dark:text-white text-lg md:pr-8">{faq.q}</span>
+                    <span className="font-bold text-white text-lg md:pr-8">{faq.q}</span>
                     <ChevronDown 
                       size={20} 
                       strokeWidth={1.5}
-                      className={`text-slate-500 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'transform rotate-180 text-blue-600' : ''}`}
+                      className={`text-slate-400 transition-transform duration-300 flex-shrink-0 ${isOpen ? 'transform rotate-180 text-blue-400' : ''}`}
                     />
                   </button>
                   
@@ -77,7 +77,7 @@ export default function Faq() {
                     aria-labelledby={`faq-btn-${index}`}
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
-                    <div className="px-6 pb-6 text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/80 dark:border-white/10 pt-4 bg-white/40 dark:bg-slate-950/20">
+                    <div className="px-6 pb-6 text-slate-200 leading-relaxed border-t border-white/10 pt-4 bg-white/5">
                       {faq.a}
                     </div>
                   </div>

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: transparent;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
@@ -12,15 +12,8 @@
   --font-display: var(--font-montserrat), ui-sans-serif, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
@@ -28,3 +21,4 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat), var(--font-display), sans-serif;
 }
+

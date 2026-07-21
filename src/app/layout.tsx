@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import AudioPlayer from "@/components/AudioPlayer";
 import ChatAssistant from "@/components/ChatAssistant";
+import VideoBackground from "@/components/VideoBackground";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -61,8 +62,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="hu" className="h-full antialiased">
-      <body className={`${inter.variable} ${montserrat.variable} min-h-full flex flex-col font-sans pt-20`}>
+    <html lang="hu" className="h-full antialiased dark">
+      <body className={`${inter.variable} ${montserrat.variable} min-h-full flex flex-col font-sans pt-20 bg-transparent text-slate-100`}>
+        <VideoBackground />
         <Header />
         {children}
         <Footer />

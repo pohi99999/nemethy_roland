@@ -8,7 +8,7 @@ import { ShieldCheck, Zap, Truck } from 'lucide-react';
 export default function Stats() {
   const stats = [
     {
-      icon: <ShieldCheck className="w-8 h-8 text-blue-500" strokeWidth={1.5} />,
+      icon: <ShieldCheck className="w-8 h-8 text-blue-400" strokeWidth={1.5} />,
       end: 100,
       suffix: "%",
       decimals: 0,
@@ -16,7 +16,7 @@ export default function Stats() {
       description: "Teljes körű felelősségvállalás minden egyes fuvarra."
     },
     {
-      icon: <Zap className="w-8 h-8 text-blue-500" strokeWidth={1.5} />,
+      icon: <Zap className="w-8 h-8 text-blue-400" strokeWidth={1.5} />,
       end: 24,
       suffix: "h",
       decimals: 0,
@@ -24,7 +24,7 @@ export default function Stats() {
       description: "Gyors reagálás, azonnali logisztikai megoldások."
     },
     {
-      icon: <Truck className="w-8 h-8 text-blue-500" strokeWidth={1.5} />,
+      icon: <Truck className="w-8 h-8 text-blue-400" strokeWidth={1.5} />,
       end: 3.5,
       suffix: "t",
       decimals: 1,
@@ -52,9 +52,9 @@ export default function Stats() {
   } as const;
 
   return (
-    <section className="bg-slate-900 text-white py-20 md:py-24 relative overflow-hidden">
+    <section className="bg-transparent text-white py-20 md:py-24 relative overflow-hidden">
       {/* Finom kék izzás a háttérben */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="sr-only">Statisztikáink és Kiemelt Értékeink</h2>
@@ -69,15 +69,15 @@ export default function Stats() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-white/5 dark:bg-slate-950/40 border border-slate-200/80 dark:border-white/10 rounded-2xl p-8 flex flex-col items-center text-center backdrop-blur-md hover:border-blue-500/30 hover:bg-white/10 dark:hover:bg-slate-900/60 transition-all duration-300 group shadow-sm"
+              className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1.5 transition-all duration-500 ease-out hover:border-white/20 rounded-2xl p-8 flex flex-col items-center text-center group"
             >
               {/* Ikon */}
-              <div className="w-14 h-14 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-blue-500/30 transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-blue-400/50 transition-all duration-300 shadow-md">
                 {stat.icon}
               </div>
 
               {/* Szám */}
-              <div className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-2 flex items-baseline justify-center">
+              <div className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-2 flex items-baseline justify-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 <CountUp
                   end={stat.end}
                   decimals={stat.decimals}
@@ -86,16 +86,16 @@ export default function Stats() {
                   enableScrollSpy={true}
                   scrollSpyOnce={true}
                 />
-                <span className="text-blue-500">{stat.suffix}</span>
+                <span className="text-blue-400">{stat.suffix}</span>
               </div>
 
               {/* Cím */}
-              <h3 className="text-lg font-bold text-slate-100 mb-2">
+              <h3 className="text-lg font-bold text-white mb-2">
                 {stat.label}
               </h3>
 
               {/* Leírás */}
-              <p className="text-sm text-slate-400 leading-relaxed max-w-[260px]">
+              <p className="text-sm text-slate-200 leading-relaxed max-w-[260px]">
                 {stat.description}
               </p>
             </motion.div>

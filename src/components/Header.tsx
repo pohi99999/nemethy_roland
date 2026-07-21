@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/40 backdrop-blur-md border-b border-white/10 text-white">
+    <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl border-b border-white/10 text-white">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-6xl">
         
         {/* Bal oldal: Logó és név */}
@@ -24,10 +24,10 @@ export default function Header() {
         <div>
           <a 
             href="tel:+36706260920" 
-            className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900 border border-slate-800/80 hover:bg-slate-800 hover:border-slate-700/80 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 shadow-xl hover:shadow-indigo-500/10"
+            className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/20 hover:border-white/30 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 shadow-lg"
             aria-label="Telefonhívás indítása: +36 70 626 0920"
           >
-            <Phone size={15} strokeWidth={1.5} className="text-blue-500" />
+            <Phone size={15} strokeWidth={1.5} className="text-blue-400" />
             <span className="hidden sm:inline">+36 70 626 0920</span>
             <span className="sm:hidden">Hívás</span>
           </a>

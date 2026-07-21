@@ -8,27 +8,27 @@ export default function Partners() {
   const partners = [
     {
       name: "Eviron System Zrt.",
-      icon: <Factory className="w-5 h-5" strokeWidth={1.5} />
+      icon: <Factory className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
     },
     {
       name: "Econix Zrt.",
-      icon: <Compass className="w-5 h-5" strokeWidth={1.5} />
+      icon: <Compass className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
     },
     {
       name: "Kgb Zrt.",
-      icon: <Building2 className="w-5 h-5" strokeWidth={1.5} />
+      icon: <Building2 className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
     },
     {
       name: "Mobil Art Kft.",
-      icon: <Truck className="w-5 h-5" strokeWidth={1.5} />
+      icon: <Truck className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
     },
     {
       name: "Königsberg Kft.",
-      icon: <Warehouse className="w-5 h-5" strokeWidth={1.5} />
+      icon: <Warehouse className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
     },
     {
       name: "Open Metal Building System Kft.",
-      icon: <Shield className="w-5 h-5" strokeWidth={1.5} />
+      icon: <Shield className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
     }
   ];
 
@@ -52,10 +52,9 @@ export default function Partners() {
   } as const;
 
   return (
-    <section className="bg-slate-950 border-y border-slate-900 py-10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/20 pointer-events-none" />
+    <section className="bg-transparent py-12 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <p className="text-center text-xs font-semibold text-slate-400 uppercase tracking-wider mb-6">
+        <p className="text-center text-xs font-semibold text-slate-200 uppercase tracking-widest mb-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           Megbízható partnereink & együttműködéseink
         </p>
         
@@ -64,18 +63,18 @@ export default function Partners() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 max-w-5xl mx-auto"
+          className="flex flex-wrap justify-center items-center gap-4 max-w-5xl mx-auto"
         >
           {partners.map((partner, index) => (
             <motion.div 
               key={index} 
               variants={itemVariants}
-              className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors duration-300 cursor-default"
+              className="flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1.5 transition-all duration-500 ease-out hover:border-white/20 px-5 py-3 rounded-2xl cursor-default group"
             >
-              <div className="opacity-70 transition-opacity">
+              <div className="transition-transform group-hover:scale-110">
                 {partner.icon}
               </div>
-              <span className="font-semibold text-sm tracking-wide text-slate-300">{partner.name}</span>
+              <span className="font-semibold text-sm tracking-wide text-white">{partner.name}</span>
             </motion.div>
           ))}
         </motion.div>

@@ -10,7 +10,7 @@ import Faq from "@/components/Faq";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950">
+    <main className="min-h-screen bg-transparent">
       <Hero />
       <Partners />
       <PremiumBanner />

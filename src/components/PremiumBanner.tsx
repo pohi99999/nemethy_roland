@@ -5,43 +5,29 @@ import { motion } from 'framer-motion';
 
 export default function PremiumBanner() {
   return (
-    <section 
-      className="relative w-full py-24 md:py-32 overflow-hidden bg-cover bg-center bg-fixed text-white border-y border-slate-800"
-      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=80')" }}
-    >
-      {/* Sötét overlay a jó olvashatóságért */}
-      <div className="absolute inset-0 bg-slate-950/85 z-0" />
-      
-      {/* Finom sugárirányú háttérfények és pont-hálózat */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none z-10" style={{
-        backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-        backgroundSize: '30px 30px',
-        backgroundPosition: 'center'
-      }} />
-      
+    <section className="relative w-full py-20 md:py-28 overflow-hidden bg-transparent text-white">
       {/* Izzások */}
       <div className="absolute -top-12 left-1/3 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
       <div className="absolute -bottom-12 right-1/3 w-80 h-80 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
 
       <div className="container mx-auto px-6 relative z-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            {/* Díszítő elem */}
-            <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-8 rounded-full" />
-            
-            {/* Fő szlogen */}
-            <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight leading-relaxed md:leading-loose text-slate-100 max-w-3xl mx-auto">
-              &bdquo;Nem csak árut szállítunk. Kiszámíthatóságot és nyugalmat garantálunk a vállalkozásának.&ldquo;
-            </h2>
-            
-            <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-blue-500 mx-auto mt-8 rounded-full" />
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 transition-all duration-500 ease-out hover:border-white/20 p-8 md:p-14 rounded-3xl"
+        >
+          {/* Díszítő elem */}
+          <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-8 rounded-full shadow-md" />
+          
+          {/* Fő szlogen */}
+          <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight leading-relaxed md:leading-loose text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] max-w-3xl mx-auto">
+            &bdquo;Nem csak árut szállítunk. Kiszámíthatóságot és nyugalmat garantálunk a vállalkozásának.&ldquo;
+          </h2>
+          
+          <div className="w-12 h-1 bg-gradient-to-r from-indigo-500 to-blue-500 mx-auto mt-8 rounded-full shadow-md" />
+        </motion.div>
       </div>
     </section>
   );

@@ -13,6 +13,19 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-21 12:38 - Filmes Háttérvideó és Ultra-Prémium Glassmorphism 2.0 Integráció
+- **Videó Háttér (VideoBackground.tsx & layout.tsx):**
+  - Integráltam a `/hatter1.mp4` háttérvideót egy elkülönített `VideoBackground.tsx` komponens segítségével.
+  - Beállítottam a kötelező `autoPlay`, `loop`, `muted`, `playsInline` attribútumokat és a `fixed top-0 left-0 w-full h-full object-cover -z-50` pozícionálást.
+  - Hozzáadtam a sötétítő és lágyító réteget: `fixed top-0 left-0 w-full h-full bg-slate-950/65 backdrop-blur-[3px] -z-40 pointer-events-none`.
+- **Glassmorphism 2.0 & Tipográfiai Kontraszt:**
+  - Az összes főbb felületet és kártyát (Hero, VehicleFleet, Partners, PremiumBanner, Stats, HowItWorks, Testimonials, QuoteForm, Faq, Header) átültettem a legújabb `bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]` dizájnra.
+  - Finom és folyamatos `hover:bg-white/10 hover:-translate-y-1.5 transition-all duration-500 ease-out hover:border-white/20` lebegő effekteket állítottam be.
+  - A főcímek `drop-shadow` szövegárnyékot kapotttak a tökéletes olvashatóságért.
+- **Tesztelés & Deploy:**
+  - `npm run build` sikeresen lefordította a projektet hiba nélkül.
+
+
 ### 2026-07-17 14:52 - Technikai SEO, sitemap.xml és robots.txt integráció
 - **Technikai SEO (layout.tsx):**
   - Bővítettem a metaadatokat a legmagasabb B2B SEO sztenderdek szerint (cím sablon, meta leírás, kulcsszavak, szerző és robotok beállításai).

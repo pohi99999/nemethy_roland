@@ -1,27 +1,13 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import { ArrowRight, Truck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden text-white py-24 md:py-32 flex items-center min-h-[75vh]">
-      {/* Háttér kép Next.js Image-dzsel */}
-      <div className="absolute inset-0 z-0">
-        <Image 
-          src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1920&q=80"
-          alt="Prémium B2B furgon és logisztika háttér"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Sötét overlay a jó olvashatóságért */}
-        <div className="absolute inset-0 bg-black/70 z-10" />
-      </div>
-
-      {/* Háttér izzás effektek a kép fölött és a tartalom mögött */}
+    <section className="relative overflow-hidden text-white py-24 md:py-32 flex items-center min-h-[75vh] bg-transparent">
+      {/* Háttér izzás effektek */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none z-10" />
 
@@ -30,21 +16,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto text-center bg-slate-950/40 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-14 shadow-2xl"
+          className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-14 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:border-white/20 transition-all duration-500 ease-out"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/60 backdrop-blur-sm border border-white/10 text-blue-400 text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-blue-400 text-sm font-semibold mb-8 shadow-md">
             <Truck size={16} strokeWidth={1.5} />
             <span>Prémium B2B Árufuvarozás</span>
           </div>
 
           {/* Főcím */}
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent leading-tight md:leading-none">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent leading-tight md:leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
             Expressz árufuvarozás és logisztika kompromisszumok nélkül
           </h1>
 
           {/* Alcím */}
-          <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
             Kiemelt kapacitás, garantált szerződéses biztonság és precíz teljesítés céges partnereinknek.
           </p>
 
@@ -52,7 +38,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a 
               href="#ajanlatkeres"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] flex items-center gap-2"
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-xl hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] flex items-center gap-2"
             >
               <span>Gyors Ajánlatkérés</span>
               <ArrowRight size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -60,7 +46,7 @@ export default function Hero() {
             
             <a 
               href="#kapcsolat" 
-              className="px-8 py-4 bg-slate-900/50 backdrop-blur-sm hover:bg-slate-800 text-slate-200 hover:text-white font-semibold rounded-xl border border-white/10 hover:-translate-y-0.5 active:scale-[0.98] shadow-xl hover:shadow-indigo-500/10 transition-all duration-300"
+              className="px-8 py-4 bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white font-semibold rounded-xl border border-white/15 hover:border-white/30 hover:-translate-y-0.5 active:scale-[0.98] shadow-lg transition-all duration-300"
             >
               Kapcsolatfelvétel
             </a>

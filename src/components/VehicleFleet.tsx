@@ -28,8 +28,8 @@ export default function VehicleFleet() {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 md:py-28 relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section className="bg-transparent py-20 md:py-28 relative overflow-hidden text-white">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,16 +37,16 @@ export default function VehicleFleet() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-blue-400 text-sm font-semibold mb-6 shadow-md">
             <Compass size={16} strokeWidth={1.5} />
             <span>Modern Szállítókapacitás</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
             Professzionális Járműpark és Eszközök
           </h2>
           
-          <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-lg max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
             Flottánkat a B2B partnereink szigorú elvárásaihoz szabtuk. A modern zárt és ponyvás járműveink, valamint rugalmas szállítóeszközeink garantálják a precíz és sérülésmentes célba juttatást.
           </p>
         </motion.div>
@@ -59,10 +59,10 @@ export default function VehicleFleet() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white/70 dark:bg-slate-950/40 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-200/80 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-500/30 transition-all duration-300 flex flex-col group"
+              className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1.5 transition-all duration-500 ease-out hover:border-white/20 rounded-2xl overflow-hidden flex flex-col group"
             >
               {/* Kép konténer */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
                 <Image 
                   src={item.image}
                   alt={item.title}
@@ -72,21 +72,21 @@ export default function VehicleFleet() {
                   priority={index === 0}
                 />
                 {/* Kapacitás badge */}
-                <div className="absolute bottom-4 left-4 bg-slate-950/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide">
+                <div className="absolute bottom-4 left-4 bg-slate-950/80 backdrop-blur-md border border-white/10 text-white px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide shadow-md">
                   {item.capacity}
                 </div>
               </div>
               
               {/* Kártya tartalom */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-bold text-white text-lg mb-2 group-hover:text-blue-400 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                <p className="text-slate-200 text-sm leading-relaxed mb-6 flex-grow">
                   {item.description}
                 </p>
                 
-                <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-blue-600 font-medium text-xs tracking-wider uppercase">
+                <div className="pt-4 border-t border-white/10 flex items-center gap-2 text-blue-400 font-semibold text-xs tracking-wider uppercase">
                   <span>Részletek</span>
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
