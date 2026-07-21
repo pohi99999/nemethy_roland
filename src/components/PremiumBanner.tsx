@@ -16,7 +16,7 @@ export default function PremiumBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 transition-all duration-500 ease-out hover:border-white/20 p-8 md:p-14 rounded-3xl"
+          className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)] hover:bg-white/10 transition-all duration-500 ease-out hover:border-white/20 p-8 md:p-14 rounded-3xl"
         >
           {/* Díszítő elem */}
           <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-8 rounded-full shadow-md" />

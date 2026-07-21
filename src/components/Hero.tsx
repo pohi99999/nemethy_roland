@@ -16,16 +16,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-14 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:border-white/20 transition-all duration-500 ease-out"
+          className="max-w-4xl mx-auto text-center bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-14 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)] hover:bg-white/10 hover:border-white/20 transition-all duration-500 ease-out"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-blue-400 text-sm font-semibold mb-8 shadow-md">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-blue-400 text-sm font-semibold mb-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
             <Truck size={16} strokeWidth={1.5} />
             <span>Prémium B2B Árufuvarozás</span>
           </div>
 
-          {/* Főcím */}
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-200 bg-clip-text text-transparent leading-tight md:leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+          {/* Főcím - Gradiens Text Masking & text-wrap balance */}
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent leading-tight md:leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] [text-wrap:balance]">
             Expressz árufuvarozás és logisztika kompromisszumok nélkül
           </h1>
 
@@ -34,22 +34,26 @@ export default function Hero() {
             Kiemelt kapacitás, garantált szerződéses biztonság és precíz teljesítés céges partnereinknek.
           </p>
 
-          {/* Akció gomb */}
+          {/* Mágneses Akció Gombok */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a 
+            <motion.a 
               href="#ajanlatkeres"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-xl hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.3),_0_8px_24px_rgba(59,130,246,0.3)] transition-all duration-300 flex items-center gap-2"
             >
               <span>Gyors Ajánlatkérés</span>
               <ArrowRight size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </motion.a>
             
-            <a 
+            <motion.a 
               href="#kapcsolat" 
-              className="px-8 py-4 bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white font-semibold rounded-xl border border-white/15 hover:border-white/30 hover:-translate-y-0.5 active:scale-[0.98] shadow-lg transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-white/10 backdrop-blur-xl hover:bg-white/20 text-white font-semibold rounded-xl border border-white/15 hover:border-white/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] transition-all duration-300"
             >
               Kapcsolatfelvétel
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </div>

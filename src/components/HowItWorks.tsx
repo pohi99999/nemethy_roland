@@ -76,7 +76,8 @@ export default function HowItWorks() {
             <motion.div 
               key={index} 
               variants={itemVariants}
-              className="relative z-10 flex flex-col items-center text-center bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1.5 transition-all duration-500 ease-out hover:border-white/20 p-6 rounded-2xl group"
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              className="relative z-10 flex flex-col items-center text-center bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)] hover:bg-white/10 hover:border-white/20 transition-all duration-500 ease-out p-6 rounded-3xl group"
             >
               {/* Ikon és kör */}
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 border-2 border-white/15 bg-white/10 group-hover:bg-blue-600 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300">

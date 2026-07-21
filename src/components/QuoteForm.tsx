@@ -81,11 +81,11 @@ export default function QuoteForm() {
           </div>
 
           {/* Űrlap Kártya */}
-          <div className="max-w-3xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 transition-all duration-500 ease-out hover:border-white/20 p-8 md:p-12 rounded-3xl">
+          <div className="max-w-3xl mx-auto bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)] hover:bg-white/10 transition-all duration-500 ease-out hover:border-white/20 p-8 md:p-12 rounded-3xl">
             
             {submitStatus === 'success' ? (
               <div className="text-center py-12 space-y-6 animate-fade-in">
-                <div className="w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-inner">
+                <div className="w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
                   <CheckCircle size={44} strokeWidth={1.5} />
                 </div>
                 <div className="space-y-2">
@@ -94,13 +94,15 @@ export default function QuoteForm() {
                     Köszönjük megkeresését. Az adatait rögzítettük, és munkatársunk hamarosan felveszi Önnel a kapcsolatot a megadott elérhetőségeken.
                   </p>
                 </div>
-                <button 
+                <motion.button 
                   onClick={() => setSubmitStatus('idle')}
-                  className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/15 text-white font-semibold rounded-xl hover:-translate-y-0.5 active:scale-[0.98] shadow-md transition-all duration-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-2.5 bg-white/10 hover:bg-white/20 border border-white/15 text-white font-semibold rounded-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] transition-all duration-200"
                   aria-label="Új ajánlatkérő űrlap megnyitása"
                 >
                   Új ajánlatkérés
-                </button>
+                </motion.button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -245,14 +247,16 @@ export default function QuoteForm() {
 
                 {/* Küldés gomb */}
                 <div className="pt-4">
-                  <button 
+                  <motion.button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full group py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-xl hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2 disabled:from-slate-600 disabled:to-slate-700 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full group py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.3),_0_8px_24px_rgba(59,130,246,0.3)] transition-all duration-300 flex items-center justify-center gap-2 disabled:from-slate-600 disabled:to-slate-700 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
                   >
                     <span>{isSubmitting ? 'Küldés folyamatban...' : 'Ajánlatkérés elküldése'}</span>
                     {!isSubmitting && <Send size={18} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />}
-                  </button>
+                  </motion.button>
                 </div>
               </form>
             )}

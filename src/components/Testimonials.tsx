@@ -67,7 +67,8 @@ export default function Testimonials() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1.5 transition-all duration-500 ease-out hover:border-white/20 rounded-2xl p-8 relative flex flex-col justify-between group"
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              className="bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)] hover:bg-white/10 hover:border-white/20 transition-all duration-500 ease-out rounded-3xl p-8 relative flex flex-col justify-between group"
             >
               <Quote strokeWidth={1.5} className="absolute top-6 right-8 w-10 h-10 text-white/10 pointer-events-none group-hover:text-white/20 transition-colors" />
 

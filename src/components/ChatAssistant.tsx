@@ -102,10 +102,10 @@ export default function ChatAssistant() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-16 right-0 w-80 sm:w-96 h-[450px] bg-slate-950/80 border border-white/10 shadow-2xl backdrop-blur-md rounded-2xl flex flex-col overflow-hidden text-slate-100 max-w-[calc(100vw-2rem)] animate-in fade-in zoom-in-95 duration-200"
+            className="absolute bottom-16 right-0 w-80 sm:w-96 h-[450px] bg-slate-950/85 border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl rounded-2xl flex flex-col overflow-hidden text-slate-100 max-w-[calc(100vw-2rem)]"
           >
             {/* Fejléc */}
-            <div className="bg-gradient-to-r from-blue-900/80 to-slate-900/80 px-4 py-3 border-b border-slate-800/80 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-blue-900/80 to-slate-900/80 px-4 py-3 border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
                   <Truck size={16} strokeWidth={1.5} />
@@ -137,7 +137,7 @@ export default function ChatAssistant() {
                   <div className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed shadow-sm ${
                     msg.sender === 'user' 
                       ? 'bg-blue-600 text-white rounded-br-none' 
-                      : 'bg-slate-900 border border-slate-800 text-slate-200 rounded-bl-none'
+                      : 'bg-white/10 border border-white/10 text-slate-200 rounded-bl-none backdrop-blur-md'
                   }`}>
                     {msg.text}
                   </div>
@@ -147,31 +147,35 @@ export default function ChatAssistant() {
             </div>
 
             {/* Alsó input mező */}
-            <form onSubmit={handleSend} className="p-3 border-t border-slate-800/80 bg-slate-950/80 backdrop-blur-md flex gap-2">
+            <form onSubmit={handleSend} className="p-3 border-t border-white/10 bg-slate-950/80 backdrop-blur-md flex gap-2">
               <input 
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Kérdezzen a fuvarozási kapacitásokról..."
                 aria-label="Kérdés beírása az AI asszisztensnek"
-                className="flex-1 bg-slate-900/60 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                className="flex-1 bg-white/10 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:border-blue-400 transition-colors"
               />
-              <button 
+              <motion.button 
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-xl transition-all active:scale-95 flex items-center justify-center shadow-lg hover:-translate-y-0.5 hover:shadow-indigo-500/10"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-blue-600 hover:bg-blue-500 text-white p-2 rounded-xl transition-all flex items-center justify-center shadow-lg"
                 aria-label="Küldés"
               >
                 <Send size={16} />
-              </button>
+              </motion.button>
             </form>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Lebegő gomb alapállapotban */}
-      <button 
+      <motion.button 
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-14 h-14 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 relative ${
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className={`w-14 h-14 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.3),_0_8px_24px_rgba(59,130,246,0.4)] transition-all duration-300 relative ${
           isOpen ? 'rotate-90' : ''
         }`}
         aria-label="AI Chat Asszisztens megnyitása"
@@ -185,7 +189,7 @@ export default function ChatAssistant() {
             <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-blue-500 border-2 border-slate-950 rounded-full animate-pulse" />
           </>
         )}
-      </button>
+      </motion.button>
     </div>
   );
 }

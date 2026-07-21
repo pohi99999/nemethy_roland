@@ -52,9 +52,10 @@ export default function Faq() {
             {faqs.map((faq, index) => {
               const isOpen = activeIndex === index;
               return (
-                <div 
-                  key={index} 
-                  className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-500 ease-out hover:border-white/20 rounded-2xl overflow-hidden"
+                <motion.div 
+                  key={index}
+                  whileHover={{ y: -2 }}
+                  className="bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)] hover:bg-white/10 transition-all duration-500 ease-out hover:border-white/20 rounded-2xl overflow-hidden"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
@@ -81,7 +82,7 @@ export default function Faq() {
                       {faq.a}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

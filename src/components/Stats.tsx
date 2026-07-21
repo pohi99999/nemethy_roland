@@ -69,10 +69,11 @@ export default function Stats() {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] hover:bg-white/10 hover:-translate-y-1.5 transition-all duration-500 ease-out hover:border-white/20 rounded-2xl p-8 flex flex-col items-center text-center group"
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              className="bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)] hover:bg-white/10 hover:border-white/20 transition-all duration-500 ease-out rounded-3xl p-8 flex flex-col items-center text-center group"
             >
               {/* Ikon */}
-              <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-blue-400/50 transition-all duration-300 shadow-md">
+              <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-blue-400/50 transition-all duration-300">
                 {stat.icon}
               </div>
 

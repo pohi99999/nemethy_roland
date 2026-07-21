@@ -13,6 +13,21 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-07-21 12:55 - Világszínvonalú UI/UX Audit (Bento Grid, Text Masking, Inner Glow & Animated Video Overlay)
+- **Filmes Videó Effektek & Noise Overlay (VideoBackground.tsx):**
+  - Beúszó Framer Motion animációt adtam a videó konténerhez (`initial={{ opacity: 0 }} animate={{ opacity: 1 }}`).
+  - Integráltam a felületre a félig áttetszó SVG film zajjréteget (grain overlay) a `mix-blend-overlay opacity-25` osztályokkal.
+- **Tipográfiai Gradiens Masking & Balance (Hero.tsx):**
+  - A H1 címsor megkapta a `bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400` gradiens maszkot és a `[text-wrap:balance]` elrendezést.
+- **Glassmorphism 3.0 & Inner Glow:**
+  - Erősítettem a háttérelmosást (`backdrop-blur-2xl`) és belső fényt (inner glow shadow: `shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),_0_8px_32px_rgba(0,0,0,0.4)]`) alkalmaztam a kártyákra és a fejlécre.
+- **Mágneses Gombok & Bento Grid (VehicleFleet.tsx, Header.tsx, FloatingCallButton.tsx, ChatAssistant.tsx):**
+  - A gombok megkapták a Framer Motion `whileHover={{ scale: 1.05 }}` és `whileTap={{ scale: 0.95 }}` mágneses interakcióit.
+  - A járműpark szekciót aszimmetrikus "Bento Grid" struktúrára alakítottam át kiemelt szerelvény kártyával és lépcsőzetes (staggered) scroll animációval.
+- **Tesztelés & Deploy:**
+  - `npm run build` lefutott hiba nélkül.
+
+
 ### 2026-07-21 12:38 - Filmes Háttérvideó és Ultra-Prémium Glassmorphism 2.0 Integráció
 - **Videó Háttér (VideoBackground.tsx & layout.tsx):**
   - Integráltam a `/hatter1.mp4` háttérvideót egy elkülönített `VideoBackground.tsx` komponens segítségével.
