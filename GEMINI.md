@@ -13,6 +13,19 @@ Ez a fájl tartalmazza a projekt fejlesztési mérföldköveit és az aktuális 
 
 ## Fejlesztési Napló
 
+### 2026-08-14 10:08 - Haladó Technikai SEO, MetadataBase, Canonical URL és JSON-LD Strukturált Adatok
+- **Canonical URL & MetadataBase (layout.tsx):**
+  - Beállításra került a `metadataBase: new URL('https://nemethy-roland.vercel.app')` a kanonikus és relatív megbízható hivatkozásokhoz.
+  - Hozzáadva az `alternates: { canonical: '/' }` kanonikus beállítás.
+  - Kibővítve a kulcsszó-készlet specifikus B2B kifejezésekkel: `"B2B árufuvarozás"`, `"zárt furgon bérlés sofőrrel"`, `"expressz raklapos szállítás"`.
+- **JSON-LD Strukturált Adatok (layout.tsx):**
+  - Integrálva a Schema.org szerinti `LogisticsService` JSON-LD adatstruktúra a `<head>`-be.
+  - Tartalmazza a céges nevet, képet, telefonszámot, PostalAddress Érd címet, areaServed lefedettséget és priceRange mutatót.
+- **Sitemap & Robots Ellenőrzés:**
+  - Ellenőrizve a [sitemap.ts](file:///Z:/001_Workspace/Némethy_Roland/src/app/sitemap.ts) és [robots.ts](file:///Z:/001_Workspace/Némethy_Roland/src/app/robots.ts) konfigok.
+- **Tesztelés:**
+  - `npm run build` sikeresen lefordította a statikus és dinamikus oldalakat (sitemap.xml, robots.txt generálás igazolva).
+
 ### 2026-07-21 12:55 - Világszínvonalú UI/UX Audit (Bento Grid, Text Masking, Inner Glow & Animated Video Overlay)
 - **Filmes Videó Effektek & Noise Overlay (VideoBackground.tsx):**
   - Beúszó Framer Motion animációt adtam a videó konténerhez (`initial={{ opacity: 0 }} animate={{ opacity: 1 }}`).

@@ -23,12 +23,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nemethy-roland.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: "Némethy Roland E.V. | Prémium B2B Árufuvarozás és Logisztika",
     template: "%s | Némethy Roland E.V."
   },
   description: "Megbízható furgonos árufuvarozás, logisztika és költöztetés Érd vonzáskörzetéből, országos lefedettséggel. Mercedes Sprinter és Fiat Ducato kapacitás cégeknek.",
-  keywords: ["árufuvarozás", "logisztika", "költöztetés", "belföldi fuvarozás", "Érd", "Budapest", "furgonos szállítás", "B2B fuvarozás"],
+  keywords: [
+    "árufuvarozás",
+    "logisztika",
+    "költöztetés",
+    "belföldi fuvarozás",
+    "Érd",
+    "Budapest",
+    "furgonos szállítás",
+    "B2B fuvarozás",
+    "B2B árufuvarozás",
+    "zárt furgon bérlés sofőrrel",
+    "expressz raklapos szállítás"
+  ],
   authors: [{ name: "Némethy Roland" }],
   openGraph: {
     title: "Némethy Roland E.V. | Prémium B2B Árufuvarozás és Logisztika",
@@ -37,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Némethy Roland E.V.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1200&h=630&q=80",
+        url: "https://nemethy-roland.vercel.app/images/1.jpg",
         width: 1200,
         height: 630,
         alt: "Némethy Roland Árufuvarozás",
@@ -56,6 +72,23 @@ export const metadata: Metadata = {
   }
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LogisticsService",
+  "name": "Némethy Roland E.V. - Prémium B2B Árufuvarozás",
+  "image": "https://nemethy-roland.vercel.app/images/1.jpg",
+  "telephone": "+36 70 626 0920",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Földmunkás u. 38",
+    "addressLocality": "Érd",
+    "postalCode": "2030",
+    "addressCountry": "HU"
+  },
+  "areaServed": ["Érd", "Budapest", "Pest megye", "Magyarország"],
+  "priceRange": "$$"
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +96,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className="h-full antialiased dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} ${montserrat.variable} min-h-full flex flex-col font-sans pt-20 bg-transparent text-slate-100`}>
         <VideoBackground />
         <Header />
